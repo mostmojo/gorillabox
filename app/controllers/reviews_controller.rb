@@ -6,12 +6,19 @@ class ReviewsController < ApplicationController
  end
 
  def create
-   @review = Review.new
    @box = Box.find(params[:box_id])
+   @review = Review.new(review_params)
+   @review.box = @box
    if review.save
      redirect_to box_path(@box)
    else
      render :new
    end
  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:description, :stars)
+  end
 end
