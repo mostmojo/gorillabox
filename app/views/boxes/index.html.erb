@@ -1,2 +1,15 @@
-<h1>Boxes#index</h1>
-<p>Find me in app/views/boxes/index.html.erb</p>
+  <h1 class="container" style="text-align: center; margin-bottom: 34px;">Boxes</h1>
+  <div class="container">
+    <div class ="row">
+      <div class="main-container">
+        <% @boxes.each do |box|  %>
+          <%= link_to box_path(box), class:'card-link' do %>
+            <div class="card-product">
+              <div class="card-product-infos">
+                <h2><%= box.title %> </h2>
+                <p><%= box.description %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
