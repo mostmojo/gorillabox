@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_134749) do
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade do |t| #add address
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
