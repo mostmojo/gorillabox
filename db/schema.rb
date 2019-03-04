@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_114102) do
+ActiveRecord::Schema.define(version: 2019_03_04_134749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boxes", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "title"
+    t.boolean "completed"
+    t.text "details"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "stars"
+    t.bigint "user_id"
+    t.bigint "box_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["box_id"], name: "index_reviews_on_box_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "delivery_date"
+    t.string "duration"
+    t.bigint "user_id"
+    t.bigint "box_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["box_id"], name: "index_subscriptions_on_box_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +66,9 @@ ActiveRecord::Schema.define(version: 2019_03_04_114102) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "challenges", "users"
+  add_foreign_key "reviews", "boxes"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "subscriptions", "boxes"
+  add_foreign_key "subscriptions", "users"
 end
