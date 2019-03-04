@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :subscriptions, only: [:new, :create]
     resources :reviews, only: [:new, :create]
   end
-  resources :challenges, only: [:index, :show, :edit, :update, :destroy]
+  resources :challenges, only: [:index, :show, :edit, :update]
   resources :subscriptions, only: [:index, :show, :edit, :update, :destroy]
 end
