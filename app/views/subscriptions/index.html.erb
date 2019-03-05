@@ -1,2 +1,20 @@
-<h1>Subscriptions#index</h1>
-<p>Find me in app/views/subscriptions/index.html.erb</p>
+<h1>My Subscriptions</h1>
+<% @subscriptions.each do |subscription| %>
+  <% if subscription.box_id == 1 %>
+      <p><%= link_to "Box: Babyrilla", subscription_path(subscription)%></p>
+  <% elsif subscription.box_id == 2 %>
+      <p><%= link_to "Box: Normarilla", subscription_path(subscription)%></p>
+  <% elsif subscription.box_id == 3 %>
+      <p><%= link_to "Box: Gorilla", subscription_path(subscription)%></p>
+  <% end %>
+  <p>Delivery Date: <%= subscription.delivery_date  %></p>
+  <p>Duration: <%= subscription.duration  %></p>
+  <p><%= link_to "Edit", edit_subscription_path(subscription) %></p>
+  <%= link_to subscription_path(subscription), method: :delete do %>
+    <i class="far fa-trash-alt"></i>
+  <% end %>
+
+  <p> ----------------- </p>
+<% end %>
+
+

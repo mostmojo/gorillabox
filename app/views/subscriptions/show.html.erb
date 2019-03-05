@@ -1,2 +1,11 @@
-<h1>Subscriptions#show</h1>
-<p>Find me in app/views/subscriptions/show.html.erb</p>
+<h1>Your Subscription</h1>
+
+<u>Details:</u>
+<ul>
+  <li>E-mail: <%= @subscription.user.email %></li>
+  <li>Box: <%= @subscription.box_id %></li>
+  <li>Delivery Date: <%= @subscription.delivery_date %></li>
+  <li>Duration: <%= @subscription.duration %></li>
+</ul>
+
+<%= link_to "Back to my subscriptions", subscriptions_path %>
