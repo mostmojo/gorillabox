@@ -1,0 +1,11 @@
+<%= simple_form_for [@box, @subscription] do |f| %>
+  <% f.input :box_id, value: params[:box_id] %>
+  <% f.input :user_id %>
+  <%= f.input :duration %>
+
+  <div class="form-inline d-flex justify-content-between mb-2">
+    <%= f.input :delivery_date, as: :date, html5: true, input_html: {value: Date.today + 3} %>
+  </div>
+
+  <%= f.submit "Confirm subscription", class: "btn btn-primary" %>
+<% end %>
