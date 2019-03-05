@@ -1,1 +1,28 @@
 
+.home-style {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	// align-items: center;
+	// height: 100vh;
+}
+
+.home-image {
+	width: 443px;
+	height: 322px;
+}
+
+.home-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+p {
+	color: #969696
+}
+
+.home-choose-box {
+	text-align: center;
+}
