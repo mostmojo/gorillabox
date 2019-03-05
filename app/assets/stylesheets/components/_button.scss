@@ -1,0 +1,25 @@
+.btn-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #C6DA96;
+  transition: background 0.3s ease;
+}
+
+.btn-green:hover {
+  background: #aebf83;
+  color: white;
+}
+
+.btn-purple {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #AA96DA;
+  transition: background 0.3s ease;
+}
+
+.btn-purple:hover {
+  background: #9787c4;
+  color: white;
+}
