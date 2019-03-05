@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+	<div class="home-style">
+		<div class="home-text-with-button">
+			<div class=home-text>
+				<h1>Your monthly box of <br><span style="color: #AA96DA">healthy</span> goodness.</h1>
+				<p>A monthly subscription box filled with healthy, low cost &<br> organic products, hand picked by experts.</p>
+			</div>
+			<div class="btn btn-green">
+				<a>Order a box</a>
+			</div>
+		</div>
+		<div class=home-image>
+			<%= image_tag("banner-illustration.png", :alt => "banner-illustration", class: "home-image") %>
+		</div>
+	</div>
+</div>
