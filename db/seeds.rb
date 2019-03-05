@@ -1,7 +1,7 @@
 puts 'Cleaning database...'
 Box.destroy_all
+Challenge.destroy_all
 User.destroy_all
-Challenge.destroy_all 
 
 puts 'Creating Box...'
 boxes_attributes = [

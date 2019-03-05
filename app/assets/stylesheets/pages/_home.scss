@@ -2,21 +2,20 @@
 .home-style {
 	display: flex;
 	justify-content: space-between;
-	margin: 24px 340px;
+	margin: 50px 70px;
 	// align-items: center;
-	// height: 100vh;
+	height: 80vh;
 }
 
 .home-image {
-	width: 443px;
-	height: 322px;
+	height: 566px;
 }
 
 .home-text {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-top: 20px;
+	margin-top: 60px;
 }
 
 p {
