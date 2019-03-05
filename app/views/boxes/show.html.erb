@@ -1,4 +1,69 @@
-<h1>Boxes#show</h1>
-<p>Find me in app/views/boxes/show.html.erb</p>
+<div class="show-title">
+  <h1>Normarilla</h1>
+</div>
 
-<%= link_to "Subscribe", new_box_subscription_path(@box) %>
+<div class="show-product">
+
+  <div class="flex-tab">
+  <!-- The expanding image container -->
+  <div class="container">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+    <!-- Expanded image -->
+    <img id="expandedImg" style="width:60%">
+
+    <!-- Image text -->
+    <div id="imgtext"></div>
+  </div>
+
+  <!-- The grid: four columns -->
+  <div class="row">
+    <div class="column">
+      <img id="active" class='show-product-images' src="<%= asset_url 'b1.jpg' %>" alt="Protein bars" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img class='show-product-images' src="<%= asset_url 'b2.jpg' %>" alt="Fruits" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img class='show-product-images' src="<%= asset_url 'b3.jpg' %>" alt="Milkshakes" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img class='show-product-images' src="<%= asset_url 'b1.jpg' %>" alt="Energy bars" onclick="myFunction(this);">
+    </div>
+  </div>
+
+  </div>
+
+  <div class="show-right">
+    <h2>Choose a subscription</h2>
+    <p><strong>One off</strong></p>
+    <p>monthly price</p>
+    <p>£20.00 GBP per month</p>
+    <%= link_to "Order a box", subscriptions_path, class: "btn-purple" %>
+    <div class="show-overview">
+      <h3>Product overview</h3>
+      <p>A lovingly curated collection of healhty food & drink, ingredients and supplements designed to support activity and recovery for both men & women.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+  document.getElementById('active').click();
+
+  function myFunction(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}
+</script>
