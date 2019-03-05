@@ -1,17 +1,20 @@
+
 <div class="container">
-  	<h1>Boxes</h1>
-    <div class ="row">
-        <% @boxes.each do |box|  %>
-	        <div class="col-xs-12 col-md-4">
-	          <%= link_to box_path(box), class:'card-link' do %>
-	            <div class="card-product">
-	                <h2><%= box.title %> </h2>
-	              <div class="card-product-infos">
-	                <p><%= box.description %></p>
-	              </div>
-	            </div>
-	          <% end %>
-	        </div>
-	    <% end %>
-    </div>
+  <h1>Boxes</h1>
+      <% @boxes.each do |box|  %>
+        <div class="col-xs-12 col-md-4">
+          <%= link_to box_path(box), class:'card-link' do %>
+            <div class="card-trip">
+              <img src="https://images.unsplash.com/photo-1447753072467-2f56032d1d48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" >
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= box.title %> </h2>
+                  <p><%= box.description %></p>
+                </div>
+                <h2 class="card-trip-pricing">£99.99</h2>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 </div>
