@@ -31,3 +31,49 @@
   position: relative;
 }
 
+.card-product {
+  padding-left: 5px;
+  // overflow: hidden;
+  min-height: 140px;
+  width: 400px;
+  background: white;
+  margin: 30px 8px;
+}
+
+.card-product img {
+  height: 88%;
+  width: 140px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #AA96DA;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.product-card-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.centering {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+  // flex-direction: column;
+}
