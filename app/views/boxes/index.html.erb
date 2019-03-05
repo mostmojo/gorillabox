@@ -1,38 +1,66 @@
-  <div class="home-style">
-    <div class="home-text-with-button">
-      <div class=home-text>
-        <h1>Your monthly box of <br><span style="color: #AA96DA">healthy</span> goodness.</h1>
-        <p>A monthly subscription box filled with healthy, low cost &<br> organic products, hand picked by experts.</p>
-      </div>
-      <div class="btn btn-green">
-        <a>Order a box</a>
-      </div>
+<div class="home-style">
+  <div class="home-text-with-button">
+    <div class=home-text>
+      <h1>Your monthly box of <br><span style="color: #AA96DA">healthy</span> goodness.</h1>
+      <p>A monthly subscription box filled with healthy, low cost &<br> organic products, hand picked by experts.</p>
     </div>
-    <div class=home-image>
-      <%= image_tag("banner-illustration.png", :alt => "banner-illustration", class: "home-image") %>
+    <div class="btn btn-green">
+      <a>Order a box</a>
     </div>
   </div>
-    <div class="home-choose-box">
-      <h3>Choose the right box for you</h3>
-    </div>
+  <div class=home-image>
+    <%= image_tag("banner-illustration.png", :alt => "banner-illustration", class: "home-image") %>
+  </div>
 </div>
 
 <div class="container">
-<!--   Boxes -->
-    <div class="boxes">
-      <% @boxes.each do |box|  %>
-          <%= link_to box_path(box), class:'card-link' do %>
-            <div class="card-trip">
-              <img src="https://images.unsplash.com/photo-1447753072467-2f56032d1d48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" >
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= box.title %> </h2>
-                  <p><%= box.description %></p>
-                </div>
-                <h2 class="card-trip-pricing">£99.99</h2>
-              </div>
-            </div>
-          <% end %>
-      <% end %>
+  <div class="home-choose-box">
+    <h3>How it works</h3>
+  </div>
+
+  <div class="product-card-container">
+    <div class="centering">
+      <div class="card-product">
+        <%= image_tag("b14.png", :alt => "pick-box") %>
+        <div class="card-product-infos">
+          <h2>Pick a box</h2>
+          <p>Find your favourite box from our three 'rilla' categories.</p>
+        </div>
+      </div>
+      <div class="card-product">
+          <%= image_tag("b12.png", :alt => "create-account") %>
+          <div class="card-product-infos">
+            <h2>Create your account</h2>
+            <p>Sign up with gorillabox and pick your subscription time duration.</p>
+          </div>
+      </div>
+      <div class="card-product">
+          <%= image_tag("b13.png", :alt => "create-account") %>
+          <div class="card-product-infos">
+            <h2>Start your challenges while we deliver it!</h2>
+            <p>Start your monthly challenges and earn rewards while we get your rillas straight to your door.</p>
+          </div>
+      </div>
     </div>
+  </div>
+
+  <div class="home-choose-box">
+    <h3>Choose the right box for you</h3>
+  </div>
+  <div class="boxes">
+    <% @boxes.each do |box|  %>
+      <%= link_to box_path(box), class:'card-link' do %>
+        <div class="card-trip">
+          <img src="https://images.unsplash.com/photo-1447753072467-2f56032d1d48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" >
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= box.title %> </h2>
+              <p><%= box.description %></p>
+            </div>
+            <h2 class="card-trip-pricing">£99.99</h2>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
