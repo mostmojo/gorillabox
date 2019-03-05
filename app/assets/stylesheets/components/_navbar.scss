@@ -1,21 +1,33 @@
-.navbar-default {
+.navigation-container {
   justify-content: space-between;
   background-color: transparent;
   border: none;
-  color: white;
+  margin: 25px;
   z-index: 100;
   transition: background-color 1s ease 0s;
+  height: 70px;
+  display: flex;
 }
 
-.navbar-default .navbar-collapse {
-  flex-grow: 0;
+.nav-logo {
+  width: 80px;
+  img {
+    height: 70px;
+  }
 }
 
-.navbar-default .navbar-brand img {
-  width: 40px;
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 700;
+  text-decoration: none;
+  color: #aebf83;
 }
 
-.nav-item a:hover{
-  text-decoration:underline;
+.nav-link {
+  color: #aebf83;
+    &:hover {
+      border-bottom: 1px solid black;
+    }
 }
-
