@@ -1,8 +1,26 @@
+  <div class="home-style">
+    <div class="home-text-with-button">
+      <div class=home-text>
+        <h1>Your monthly box of <br><span style="color: #AA96DA">healthy</span> goodness.</h1>
+        <p>A monthly subscription box filled with healthy, low cost &<br> organic products, hand picked by experts.</p>
+      </div>
+      <div class="btn btn-green">
+        <a>Order a box</a>
+      </div>
+    </div>
+    <div class=home-image>
+      <%= image_tag("banner-illustration.png", :alt => "banner-illustration", class: "home-image") %>
+    </div>
+  </div>
+    <div class="home-choose-box">
+      <h3>Choose the right box for you</h3>
+    </div>
+</div>
 
 <div class="container">
   <h1>Boxes</h1>
+    <div class="boxes">
       <% @boxes.each do |box|  %>
-        <div class="col-xs-12 col-md-4">
           <%= link_to box_path(box), class:'card-link' do %>
             <div class="card-trip">
               <img src="https://images.unsplash.com/photo-1447753072467-2f56032d1d48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" >
@@ -15,6 +33,6 @@
               </div>
             </div>
           <% end %>
-        </div>
       <% end %>
+    </div>
 </div>
