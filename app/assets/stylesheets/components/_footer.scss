@@ -1,0 +1,40 @@
+.footer-container {
+  opacity: 0.9;
+  background-color: #C6DA96;
+  box-sizing: border-box;
+  color:white;
+  align-items: center;
+  height: 128px;
+}
+
+
+.footer-text {
+  font-size: 18px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.list-social-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+    i{
+  font-size: 20px;
+  padding: 8px;
+  margin-top: 12px;
+}
+}
+
+.footer-logo {
+  height: 40px;
+  padding: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+
+}
+
+.social-icon {
+  padding: 0 24px;
+}
