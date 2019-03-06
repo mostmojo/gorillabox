@@ -8,14 +8,17 @@ boxes_attributes = [
  {
    title: 'Babyrilla',
    description: 'Simple box',
+   contents: 'Kick start your day with a combination of our enriched organic products and wild teas.',
  },
  {
    title: 'Normarilla',
    description: 'Awesome box',
+   contents: 'Something more than the common healthy products. A powerful combo of super goodies.',
  },
  {
    title: 'Gorilla',
    description: 'Premium box',
+   contents: 'For the active-goers looking to make the extra step with a healthier, organic super box',
  }
 ]
 Box.create!(boxes_attributes[0])
@@ -25,7 +28,7 @@ puts 'Finished'
 
 user_one = User.create(email: "pablito@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY")
 user_two = User.create(email: "john@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY")
-user_three = User.create(email: "alex@gmail.com", password: "123456", ddress: "Unit 13, 138 Kingsland Rd, London E2 8DY")
+user_three = User.create(email: "alex@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY")
 puts 'Creating Challenges...'
 challenges_attributes = [
  {
