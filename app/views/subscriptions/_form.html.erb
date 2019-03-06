@@ -1,23 +1,33 @@
-<%= simple_form_for [@box, @subscription] do |f| %>
-  <% f.input :user_id %>
-  <p>Box Name: <%= @box.title %></p>
-    <div id="price">
-      <%= @box.price %>
+<div class="container">
+  <div class="login-page">
+    <div class="login-left">
     </div>
-  <%= f.input :quantity %>
-  <%= f.input :duration %>
+    <div class="login-right">
+    <%= simple_form_for [@box, @subscription] do |f| %>
+    <% f.input :user_id %>
+    <p>Box Name: <%= @box.title %></p>
+      <div id="price">
+        <%= @box.price %>
+      </div>
+    <%= f.input :quantity %>
+    <%= f.input :duration %>
 
-    <div class="form-inline d-flex justify-content-between mb-2">
-      <%= f.input :delivery_date, as: :date, html5: true, input_html: {value: Date.today + 3} %>
-    </div>
+      <div class="form-inline d-flex justify-content-between mb-2">
+        <%= f.input :delivery_date, as: :date, html5: true, input_html: {value: Date.today + 3} %>
+      </div>
 
-    Total Amount:
-    <div id="total">
-    </div>
+      Total Amount:
+      <div id="total">
+      </div>
 
-  <%= f.submit "Confirm", class: 'btn btn-primary' %>
+    <%= f.submit "Confirm", class: 'btn-purple' %>
 
-<% end %>
+  <% end %>
+  </div>
+</div>
+</div>
+
+
 
 <script>
   const boxPrice = document.getElementById('price').innerHTML

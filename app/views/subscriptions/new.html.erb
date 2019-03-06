@@ -1,6 +1,45 @@
-<h1>New Subscription</h1>
-<p>Please enter your details below</p>
+<div class="payment-page">
+  <div class="payment-left">
+  </div>
+    <div class="payment-right">
+      <div class="payment-text">
+        <h1>Order it now</h1>
+        <p>Please enter your details below</p>
+      </div>
+    <%= simple_form_for [@box, @subscription] do |f| %>
+    <% f.input :user_id %>
+    <p><strong>Box Name: <%= @box.title %></strong></p>
+      <div id="price">
+        <%= @box.price %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :quantity %>
+        <%= f.input :duration %>
+      Total Amount:
+      <div id="total">
+      <br>
+      </div>
+      </div>
 
-    <%= render 'form', subscription: @subscription %>
-    <%= link_to "Cancel", box_path(@box) %>
+      <div class="form-actions">
+        <%= f.button :submit, "Confirm", class: "btn-purple" %>
+      </div>
+
+  <% end %>
+  </div>
+</div>
+
+
+
+
+<script>
+  const boxPrice = document.getElementById('price').innerHTML
+  const quantityBar = document.getElementById("subscription_quantity")
+
+  quantityBar.addEventListener('blur', (event) => {
+    const quantity = event.srcElement.valueAsNumber;
+    const total = (boxPrice * quantity)
+    document.getElementById('total').innerHTML = total
+  })
+</script>
 
