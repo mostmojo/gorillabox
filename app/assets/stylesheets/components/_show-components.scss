@@ -1,0 +1,100 @@
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+  position: relative;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.show-product-images {
+  width: 100px;
+}
+
+.show-product {
+  display:flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.flex-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.show-title {
+  margin-top: 34px;
+}
+
+.show-overview {
+  margin-top: 34px;
+}
+
+.btn-purple {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #AA96DA;
+  transition: background 0.3s ease;
+}
+
+.btn-purple:hover {
+  background: #9787c4;
+  color: white;
+}
+
+#expandedImg {
+  border-radius: 6px;
+  display:flex;
+  margin: auto;
+}
+
+.row-1 {
+  margin-bottom: 24px;
+  margin-top: 12px;
+}
+
+.show-right {
+  margin-left: 30px;
+}

@@ -5,4 +5,5 @@ class Box < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   monetize :price_cents
+  validates :contents, presence: true
 end

@@ -20,6 +20,7 @@ class ChallengesController < ApplicationController
         format.html { render :edit }
         format.json { render json: @challenge.errors, status: unprocessable_entity }
       end
+    end
   end
 
   private
@@ -31,4 +32,5 @@ class ChallengesController < ApplicationController
   def set_challenge
     @challenge = Challenge.find(params[:id])
   end
+
 end

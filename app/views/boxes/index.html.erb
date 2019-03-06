@@ -1,20 +1,74 @@
-
 <div class="container">
-  <h1>Boxes</h1>
-      <% @boxes.each do |box|  %>
-        <div class="col-xs-12 col-md-4">
-          <%= link_to box_path(box), class:'card-link' do %>
-            <div class="card-trip">
-              <img src="https://images.unsplash.com/photo-1447753072467-2f56032d1d48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" >
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= box.title %> </h2>
-                  <p><%= box.description %></p>
-                </div>
-                <h2 class="card-trip-pricing">£99.99</h2>
-              </div>
-            </div>
-          <% end %>
+  <div class="row">
+
+      <div class="col-md-6 col-lg-6">
+        <h1>Your monthly box of <br><span style="color: #AA96DA">healthy</span> goodness.</h1>
+        <p>A monthly subscription box filled with healthy, low cost &<br> organic products, hand picked by experts.</p>
+
+        <div class="btn btn-green">
+            <a>Order a box</a>
         </div>
-      <% end %>
+      
+      </div>
+
+    <div class="col-md-6 col-lg-6">
+      <%= video_tag("mint_tea2.mp4", autoplay: "autoplay", muted: "muted", loop: "loop", class: "bg-video") %>
+    </div>
+
+  </div>
 </div>
+
+<div class="container pb-5 pt-5">
+  <div class="row">
+      <h2 class="text-center col-12">How it works</h2>
+  </div>
+</div>
+
+  <div class="container">
+      <div class="row">
+
+        <div class="col-md-4">
+            <%= image_tag("b14.png", :alt => "pick-box", class:"img-fluid mx-auto d-block") %>
+            <h3 class="color-purple text-center">Pick</h3>
+            <p>Find your favourite box from our three 'rilla' categories</p>
+        </div>
+
+        <div class="col-md-4">
+              <%= image_tag("b12.png", :alt => "create-account", class:"img-fluid mx-auto d-block") %>
+              <h3 class="color-purple text-center">Create</h3>
+              <p>Sign up with gorillabox and pick the subscription you like</p>
+        </div>
+
+        <div class="col-md-4">
+              <%= image_tag("b13.png", :alt => "start-challenge", class:"img-fluid mx-auto d-block") %>
+              <h3 class="color-purple text-center">Start</h3>
+              <p>Do your challenges, earn rewards, let us deliver</p>
+        </div>
+
+      </div>
+  </div>
+
+  <div class="container pb-5 pt-5">
+    <div class="row">
+        <h2 class="text-center col-12">Choose the right box for you</h2>
+    </div>
+  </div>
+
+  <div class="container pb-5">
+    <div class="row">
+      <% @boxes.each do |box|  %>
+        <%= link_to box_path(box), class:"col-lg-4" do %>
+          <div class="card-trip">
+            <img src="https://images.unsplash.com/photo-1447753072467-2f56032d1d48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" >
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= box.title %> </h2>
+                <p><%= box.description %></p>
+              </div>
+              <h2 class="card-trip-pricing">£99.99</h2>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>

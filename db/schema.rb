@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_03_06_112349) do
 
   # These are extensions that must be enabled in order to support this database
@@ -17,11 +18,18 @@ ActiveRecord::Schema.define(version: 2019_03_06_112349) do
 
   create_table "boxes", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "sku"
     t.integer "price_cents", default: 0, null: false
+    t.text "contents"
+    t.string "main_image"
+    t.string "image1"
+    t.string "image2"
+    t.string "image3"
+    t.string "image4"
+
   end
 
   create_table "challenges", force: :cascade do |t|
@@ -69,6 +77,10 @@ ActiveRecord::Schema.define(version: 2019_03_06_112349) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
