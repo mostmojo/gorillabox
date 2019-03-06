@@ -6,8 +6,8 @@
         <h1>Your monthly box of <br><span style="color: #AA96DA">healthy</span> goodness.</h1>
         <p>A monthly subscription box filled with healthy, low cost &<br> organic products, hand picked by experts.</p>
 
-        <div class="btn btn-green">
-            <a>Order a box</a>
+        <div>
+            <a class="btn btn-green section1" href="#">Order a box</a>
         </div>
 
       </div>
@@ -51,7 +51,7 @@
 
   <div class="container pb-5 pt-5">
     <div class="row">
-        <h2 class="text-center col-12">Choose the right box for you</h2>
+        <h2 class="text-center col-12 section2">Choose the right box for you</h2>
     </div>
   </div>
 
@@ -72,4 +72,36 @@
         <% end %>
       <% end %>
     </div>
+    <script>
+      function smoothScroll(target, duration){
+        var target = document.querySelector(target); 
+        var targetPosition = target.getBoundingClientRect().top;
+        var startPosition = window.pageYOffset;
+        var distance = targetPosition - startPosition;
+        var startTime = null;
+
+      function animation(currentTime){
+          if(startTime === null) startTime = currentTime;
+          var timeElapsed = currentTime - startTime;
+          var run = ease(timeElapsed,startPosition,distance,duration);
+          window.scrollTo(0,run);
+          if(timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function ease(t, b, c, d){
+        t /= d / 2;
+        if (t < 1) return c / 2 * t + b;
+        t --;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+       }
+    requestAnimationFrame(animation);
+  }
+
+      var section1 = document.querySelector('.section1');
+
+      section1.addEventListener('click',function(){
+        smoothScroll('.section2', 2000);
+      });
+      
+    </script>
   </div>
