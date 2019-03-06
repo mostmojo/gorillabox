@@ -11,7 +11,7 @@ class PaymentsController < ApplicationController
   )
 
   charge = Stripe::Charge.create(
-  customer:     customer.id,   # You should store this customer id and re-use it.
+  customer:     customer.id, # You should store this customer id and re-use it.
   amount:       @subscription.amount_cents,
   description:  "Payment for Box #{@subscription.box_sku} for subscription #{@subscription.id}",
   currency:     @subscription.amount.currency

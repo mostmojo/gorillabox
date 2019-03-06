@@ -13,7 +13,7 @@
       </div>
 
     <div class="col-md-6 col-lg-6">
-      <%= video_tag("mint_tea2.mp4", autoplay: "autoplay", muted: "muted", loop: "loop", class: "bg-video") %>
+      <%= video_tag("mint_tea.mp4", autoplay: "autoplay", muted: "muted", loop: "loop", class: "bg-video") %>
     </div>
 
   </div>
@@ -55,7 +55,7 @@
     </div>
   </div>
 
-  <div class="container pb-5">
+  <div class="container pb-5 mb-3">
     <div class="row">
       <% @boxes.each do |box|  %>
         <%= link_to box_path(box), class:"col-lg-4" do %>

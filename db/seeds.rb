@@ -41,11 +41,8 @@ boxes_attributes = [
    image2: "https://s3.amazonaws.com/cratejoy-marketplace-images/bedf29b5d34b43ec853ebf8b1ce25f97_600_79.jpeg",
    image3: "https://s3.amazonaws.com/cratejoy-marketplace-images/814024b20e114530bce79521fadd5cda_600_70.jpeg",
    image4: "https://s3.amazonaws.com/cratejoy-marketplace-images/0a2096ac83f64a0d8d4655e9f6913c8e_600_70.jpeg",
-
-   description: 'Simple box',
    price_cents: 1500,
    sku: 'Babyrilla',
-   contents: 'Kick start your day with a combination of our enriched organic products and wild teas.',
  },
  {
    title: 'Normarilla',
