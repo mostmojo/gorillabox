@@ -23,9 +23,9 @@ Box.create!(boxes_attributes[1])
 Box.create!(boxes_attributes[2])
 puts 'Finished'
 
-user_one = User.create(email: "pablito@gmail.com", password: "123456")
-user_two = User.create(email: "john@gmail.com", password: "123456")
-user_three = User.create(email: "alex@gmail.com", password: "123456")
+user_one = User.create(email: "pablito@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY")
+user_two = User.create(email: "john@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY")
+user_three = User.create(email: "alex@gmail.com", password: "123456", ddress: "Unit 13, 138 Kingsland Rd, London E2 8DY")
 puts 'Creating Challenges...'
 challenges_attributes = [
  {
