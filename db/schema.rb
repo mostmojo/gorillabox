@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_104830) do
 
   create_table "boxes", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "contents"
