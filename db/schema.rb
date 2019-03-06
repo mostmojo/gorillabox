@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2019_03_06_112349) do
 
   # These are extensions that must be enabled in order to support this database
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(version: 2019_03_06_112349) do
     t.string "image2"
     t.string "image3"
     t.string "image4"
-
   end
 
   create_table "challenges", force: :cascade do |t|

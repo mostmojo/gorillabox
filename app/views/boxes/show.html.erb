@@ -4,12 +4,7 @@
 </div>
 
 
-<!-- <p>Price: <%= humanized_money_with_symbol(@box.price) %></p>
 
-<%= form_tag new_box_subscription_path(@box), method: :get do %>
-  <%= hidden_field_tag 'box_id', @box.id %>
-  <%= submit_tag 'Subscribe', class: 'btn btn-primary' %>
-<% end %> -->
 
 <div class="show-product">
 
@@ -29,16 +24,16 @@
   <!-- The grid: four columns -->
   <div class="row-1" style="display: flex; justify-content: center;">
     <div class="column">
-      <img id="active" class='show-product-images' src="<%= asset_url 'b1.jpg' %>" alt="Protein bars" onclick="myFunction(this);">
+      <img id="active" class='show-product-images' src="<%= asset_url 'b6.jpg' %>" alt="Protein bars" onclick="myFunction(this);">
     </div>
     <div class="column">
-      <img class='show-product-images' src="<%= asset_url 'b3.jpg' %>" alt="Fruits" onclick="myFunction(this);">
+      <img class='show-product-images' src="<%= asset_url 'b16.jpg' %>" alt="Fruits" onclick="myFunction(this);">
     </div>
     <div class="column">
-      <img class='show-product-images' src="<%= asset_url 'b3.jpg' %>" alt="Milkshakes" onclick="myFunction(this);">
+      <img class='show-product-images' src="<%= asset_url 'b20.jpg' %>" alt="Milkshakes" onclick="myFunction(this);">
     </div>
     <div class="column">
-      <img class='show-product-images' src="<%= asset_url 'b1.jpg' %>" alt="Energy bars" onclick="myFunction(this);">
+      <img class='show-product-images' src="<%= asset_url 'b19.jpg' %>" alt="Energy bars" onclick="myFunction(this);">
     </div>
   </div>
 
@@ -48,8 +43,11 @@
     <h2>Choose a subscription</h2>
     <p><strong>One off</strong></p>
     <p>monthly price</p>
-    <p>£20.00 GBP per month</p>
-    <%= link_to "Order a box", subscriptions_path, class: "btn-purple" %>
+    <p>Price: <%= humanized_money_with_symbol(@box.price) %></p>
+    <%= form_tag new_box_subscription_path(@box), method: :get do %>
+      <%= hidden_field_tag 'box_id', @box.id %>
+      <%= submit_tag 'Order a box', class: "btn-purple" %>
+    <% end %> 
     <div class="show-overview">
       <h3>Product overview</h3>
       <p>A lovingly curated collection of healhty food & drink, ingredients and supplements designed to support activity and recovery for both men & women.</p>
@@ -249,7 +247,7 @@
 </div>
 
 
-<!-- <script>
+<script>
   document.getElementById('active').click();
 
   function myFunction(imgs) {
