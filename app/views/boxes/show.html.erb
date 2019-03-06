@@ -19,18 +19,21 @@
 
   <!-- The grid: four columns -->
   <div class="row">
-    <div class="column">
-      <img id="active" class='show-product-images' src="<%= asset_url 'b1.jpg' %>" alt="Protein bars" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-      <img class='show-product-images' src="<%= asset_url 'b2.jpg' %>" alt="Fruits" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-      <img class='show-product-images' src="<%= asset_url 'b3.jpg' %>" alt="Milkshakes" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-      <img class='show-product-images' src="<%= asset_url 'b1.jpg' %>" alt="Energy bars" onclick="myFunction(this);">
-    </div>
+    <% @boxes.each do |box| %>
+      <%= image_tag ( "@boxes.main_image") %>
+      <div class="column">
+        <img id="active" class='show-product-images' src=<%= box.main_image %> alt="Protein bars" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img class='show-product-images' src="<%= asset_url 'b5.jpg' %>" alt="Fruits" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img class='show-product-images' src="<%= asset_url 'b6.jpg' %>" alt="Milkshakes" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img class='show-product-images' src="<%= asset_url 'b7.jpg' %>" alt="Energy bars" onclick="myFunction(this);">
+      </div>
+    <% end %>
   </div>
 
   </div>
