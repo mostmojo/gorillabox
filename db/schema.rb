@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_134749) do
+ActiveRecord::Schema.define(version: 2019_03_06_112349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_134749) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sku"
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "challenges", force: :cascade do |t|
@@ -46,10 +48,15 @@ ActiveRecord::Schema.define(version: 2019_03_04_134749) do
   create_table "subscriptions", force: :cascade do |t|
     t.string "delivery_date"
     t.string "duration"
+    t.integer "amount_cents", default: 0, null: false
     t.bigint "user_id"
     t.bigint "box_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
+    t.string "box_sku"
+    t.jsonb "payment"
+    t.integer "quantity"
     t.index ["box_id"], name: "index_subscriptions_on_box_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end

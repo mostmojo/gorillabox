@@ -1,4 +1,9 @@
 <h1>Boxes#show</h1>
 <p>Find me in app/views/boxes/show.html.erb</p>
 
-<%= link_to "Subscribe", new_box_subscription_path(@box) %>
+<p>Price: <%= humanized_money_with_symbol(@box.price) %></p>
+
+<%= form_tag new_box_subscription_path(@box), method: :get do %>
+  <%= hidden_field_tag 'box_id', @box.id %>
+  <%= submit_tag 'Subscribe', class: 'btn btn-primary' %>
+<% end %>

@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   resources :challenges, only: [:index, :show, :edit, :update]
-  resources :subscriptions, only: [:index, :show, :edit, :update, :destroy]
+  resources :subscriptions, only: [:new, :show, :create] do
+    resources :payments, only: [:new, :create]
+  end
+
 end

@@ -1,21 +1,27 @@
 puts 'Cleaning database...'
 Box.destroy_all
 User.destroy_all
-Challenge.destroy_all 
+Challenge.destroy_all
 
 puts 'Creating Box...'
 boxes_attributes = [
  {
    title: 'Babyrilla',
    description: 'Simple box',
+   price_cents: 1500,
+   sku: 'Babyrilla',
  },
  {
    title: 'Normarilla',
    description: 'Awesome box',
+   price_cents: 2000,
+   sku: 'Normarilla',
  },
  {
    title: 'Gorilla',
    description: 'Premium box',
+   price_cents: 2500,
+   sku: 'Gorilla',
  }
 ]
 Box.create!(boxes_attributes[0])
