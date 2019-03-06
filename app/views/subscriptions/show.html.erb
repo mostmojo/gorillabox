@@ -1,11 +1,8 @@
-<h1>Your Subscription</h1>
+<h1>Subscription Confirmation</h1>
 
 <u>Details:</u>
 <ul>
-  <li>E-mail: <%= @subscription.user.email %></li>
-  <li>Box: <%= @subscription.box_id %></li>
-  <li>Delivery Date: <%= @subscription.delivery_date %></li>
-  <li>Duration: <%= @subscription.duration %></li>
-</ul>
-
-<%= link_to "Back to my subscriptions", subscriptions_path %>
+  <li>Status: <%= @subscription.state %></li>
+  <li>Item: <%= @subscription.box_sku %></li>
+  <li>Amount: <%= humanized_money_with_symbol(@subscription.amount) %></li>
+<ul>

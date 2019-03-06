@@ -10,22 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_104830) do
+
+ActiveRecord::Schema.define(version: 2019_03_06_112349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boxes", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sku"
+    t.integer "price_cents", default: 0, null: false
     t.text "contents"
     t.string "main_image"
     t.string "image1"
     t.string "image2"
     t.string "image3"
     t.string "image4"
+
   end
 
   create_table "challenges", force: :cascade do |t|
@@ -52,10 +56,15 @@ ActiveRecord::Schema.define(version: 2019_03_06_104830) do
   create_table "subscriptions", force: :cascade do |t|
     t.string "delivery_date"
     t.string "duration"
+    t.integer "amount_cents", default: 0, null: false
     t.bigint "user_id"
     t.bigint "box_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
+    t.string "box_sku"
+    t.jsonb "payment"
+    t.integer "quantity"
     t.index ["box_id"], name: "index_subscriptions_on_box_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
