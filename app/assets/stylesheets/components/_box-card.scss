@@ -40,10 +40,17 @@
   margin: 30px 8px;
 }
 
-.card-product img {
-  height: 88%;
-  width: 140px;
-  object-fit: cover;
+.col-lg-4 img {
+  // height: 88%;
+  // width: 140px;
+  // object-fit: cover;
+}
+
+.col-lg-4 .img-fluid {
+  max-height: 200px;
+  // height: 88%;
+  // width: 140px;
+  // object-fit: cover;
 }
 
 .card-product h2 {
@@ -76,4 +83,12 @@
   justify-content: center;
   margin: 10px 0px;
   // flex-direction: column;
+}
+
+.color-purple {
+  color: #A996DA;
+}
+
+.bg-video {
+  height: 400px;
 }
