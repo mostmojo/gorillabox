@@ -3,6 +3,14 @@
   <h1>Norma<span class="green-text">rilla</span></h1>
 </div>
 
+
+<!-- <p>Price: <%= humanized_money_with_symbol(@box.price) %></p>
+
+<%= form_tag new_box_subscription_path(@box), method: :get do %>
+  <%= hidden_field_tag 'box_id', @box.id %>
+  <%= submit_tag 'Subscribe', class: 'btn btn-primary' %>
+<% end %> -->
+
 <div class="show-product">
 
   <div class="flex-tab">
@@ -241,7 +249,7 @@
 </div>
 
 
-<script>
+<!-- <script>
   document.getElementById('active').click();
 
   function myFunction(imgs) {

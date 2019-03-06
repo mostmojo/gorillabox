@@ -4,5 +4,6 @@ class Box < ApplicationRecord
   has_many :users, through: :subscriptions
   validates :title, presence: true
   validates :description, presence: true
+  monetize :price_cents
   validates :contents, presence: true
 end
