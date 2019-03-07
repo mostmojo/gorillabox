@@ -17,7 +17,7 @@
 
         <div class="f-inputs">
           <p style="color: black">Price</p> 
-          <p class="box-name"><%= @box.price %></p>
+          <p class="box-name">£<%= @box.price %></p>
         </div>
 
         <div id="hidden_price", style="display: none;">
@@ -30,16 +30,17 @@
           <%= f.input :delivery_address %>
         </div>
 
-        Total Amount:
-        <div id="total"; style="display: inline-block">
-          £0
+
+          <div id="total" class="f-inputs">
+          <p style="color: black">Total amount</p> 
+          <p>£0</p>
         </div>
 
       <div class="form-actions">
         <%= f.button :submit, "Confirm", class: "btn-purple" %>
       </div>
-
-  <%= link_to "Cancel", box_path(@box) %>
+    <br>
+  <p><%= link_to "Cancel", box_path(@box) %></p>
     <% end %>
   </div>
 </div>
