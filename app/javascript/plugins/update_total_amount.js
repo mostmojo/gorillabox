@@ -1,6 +1,6 @@
 const update_total_amount = () => {
 
-  const boxPrice = document.getElementById('price').innerHTML
+  const boxPrice = document.getElementById('hidden_price').innerHTML
   const quantityBar = document.getElementById("subscription_quantity")
 
   quantityBar.addEventListener('blur', (event) => {
