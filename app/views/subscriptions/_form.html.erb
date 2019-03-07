@@ -1,34 +1,42 @@
 <%= simple_form_for [@box, @subscription] do |f| %>
   <% f.input :user_id %>
-  <p>Box Name: <%= @box.title %></p>
-    <div id="price">
+  Box Name: <%= @box.title %>
+  </br>
+  </br>
+  Box Price: £<%= @box.price %>
+  </br>
+  </br>
+    <div id="price", style="display: none;">
       <%= @box.price %>
     </div>
   <%= f.input :quantity %>
   <%= f.input :duration %>
+
+  <p>Is your billing address the same as your delivery address?</p>
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+
+  <%= f.input :delivery_address %>
 
     <div class="form-inline d-flex justify-content-between mb-2">
       <%= f.input :delivery_date, as: :date, html5: true, input_html: {value: Date.today + 3} %>
     </div>
 
     Total Amount:
-    <div id="total">
+    <div id="total"; style="display: inline-block">
+      £0
     </div>
-
+  </br>
+  </br>
   <%= f.submit "Confirm", class: 'btn btn-primary' %>
 
 <% end %>
 
-<script>
-  const boxPrice = document.getElementById('price').innerHTML
-  const quantityBar = document.getElementById("subscription_quantity")
 
-  quantityBar.addEventListener('blur', (event) => {
-    const quantity = event.srcElement.valueAsNumber;
-    const total = (boxPrice * quantity)
-    document.getElementById('total').innerHTML = total
-  })
-</script>
+
+
 
 
 
