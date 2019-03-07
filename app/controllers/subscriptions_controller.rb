@@ -21,7 +21,7 @@ class SubscriptionsController < ApplicationController
     @subscription.box =  Box.find(params[:box_id])
     @subscription.user = current_user
     @subscription.state = "pending"
-    @subscription.amount = @subscription.quantity * @subscription.box.price
+    @subscription.amount = @subscription.quantity * @subscription.box.price unless @subscription.quantity.nil?
     if @subscription.save
       redirect_to new_subscription_payment_path(@subscription)
     else
