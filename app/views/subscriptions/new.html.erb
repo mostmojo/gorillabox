@@ -6,7 +6,7 @@
         <h1>Order it now</h1>
         <p>Please enter your details below</p>
       </div>
-    
+
     <%= simple_form_for [@box, @subscription] do |f| %>
       <% f.input :user_id %>
 
@@ -37,10 +37,9 @@
         <%= f.button :submit, "Confirm", class: "btn-purple" %>
       </div>
 
+      <%= link_to "Cancel", box_path(@box) %>
     <% end %>
+    </div>
   </div>
-
-  <%= link_to "Cancel", box_path(@box) %>
-
 </div>
 

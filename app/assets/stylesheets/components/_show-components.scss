@@ -138,11 +138,12 @@
 
 .show-right {
   margin: 0px 30px;
-  width: 60%
+  width: 50%;
+  padding: 34px;
 }
 
 .show-left {
-  width: 60%
+  width: 50%
 }
 
 
@@ -198,4 +199,9 @@
 .product-info {
   display:flex;
   padding-top: 20px;
+}
+
+.show-overview p {
+  margin-top: 25px;
+  color: black;
 }
