@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :challenges
   has_many :reviews
   has_many :boxes, through: :subscriptions
+  mount_uploader :photo, PhotoUploader
 end
