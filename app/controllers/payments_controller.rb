@@ -10,15 +10,12 @@ class PaymentsController < ApplicationController
       email: params[:stripeEmail]
     )
 
-  charge = Stripe::Charge.create(
-  customer:     customer.id, # You should store this customer id and re-use it.
-  amount:       @subscription.amount_cents,
-  description:  "Payment for Box #{@subscription.box_sku} for subscription #{@subscription.id}",
-  currency:     @subscription.amount.currency
-  )
-
-  @subscription.update(payment: charge.to_json, state: 'paid')
-  redirect_to subscription_path(@subscription)
+    charge = Stripe::Charge.create(
+      customer: customer.id, # You should store this customer id and re-use it.
+      amount: @subscription.amount_cents,
+      description: "Payment for Box #{@subscription.box_sku} for subscription #{@subscription.id}",
+      currency: @subscription.amount.currency
+    )
 
     @subscription.update(payment: charge.to_json, state: 'paid')
     current_user.has_subscription = true
@@ -31,6 +28,6 @@ class PaymentsController < ApplicationController
   private
 
   def set_subscription
-    @subscription = current_user.subscriptions.where(state: 'pending').find(params[:subscription_id])
+    @subscription = Subscription.find(params[:subscription_id])
   end
 end
