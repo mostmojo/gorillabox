@@ -28,46 +28,26 @@
       </div>
     </div>
 
-
-
     <div class="show-right">
       <div class="show-overview">
         <h3>Product overview</h3>
         <p><%= @box.description %></p>
       </div>
 
-      <h2>Price per month: <%= humanized_money_with_symbol(@box.price) %></h2>
-<!--       <%= form_tag new_box_subscription_path(@box), method: :get do %>
+      <p>Price per box: <%= humanized_money_with_symbol(@box.price) %></p>
+      <%= form_tag new_box_subscription_path(@box), method: :get do %>
         <%= hidden_field_tag 'box_id', @box.id %>
-        <%= submit_tag 'Order a box', class: "btn-purple" %>
-      <% end %> -->
-      <h2>Order your box</h2>
-      <%= simple_form_for [@box, Subscription.new] do |f| %>
-        <% f.input :user_id %>
-        <%= f.input :quantity %>
-        <%= f.input :duration %>
-        <%= f.submit "Confirm", class: 'btn-purple' %>
+        <%= submit_tag 'Order', class: "btn-purple" %>
       <% end %>
-
-    <script>
-      const boxPrice = document.getElementById('price').innerHTML
-      const quantityBar = document.getElementById("subscription_quantity")
-
-      quantityBar.addEventListener('blur', (event) => {
-        const quantity = event.srcElement.valueAsNumber;
-        const total = (boxPrice * quantity)
-        document.getElementById('total').innerHTML = total
-      })
-    </script>
     </div>
   </div>
 
-  <div>
+<!--   <div>
     <h2>Description</h2>
     <div>
       <p><%= @box.contents %></p>
     </div>
-  </div>
+  </div> -->
 
   <h2>Reviews</h2>
   <br>
@@ -187,21 +167,6 @@
   </div>
   <!--/.Carousel Wrapper-->
 </div>
-
-<script>
-  function myFunction(imgs) {
-    // Get the expanded image
-    var expandImg = document.getElementById("expandedImg");
-    // Get the image text
-    var imgText = document.getElementById("imgtext");
-    // Use the same src in the expanded image as the image being clicked on from the grid
-    expandImg.src = imgs.src;
-    // Use the value of the alt attribute of the clickable image as text inside the expanded image
-    imgText.innerHTML = imgs.alt;
-    // Show the container element (hidden with CSS)
-    expandImg.parentElement.style.display = "block";
-  }
-</script>
 
 </div>
 
