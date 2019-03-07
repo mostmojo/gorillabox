@@ -1,8 +1,17 @@
 <h1>Subscription Confirmation</h1>
-
-<u>Details:</u>
+<p>Congrats! Your Box is on its way</p>
+<u>Subscription Details:</u>
 <ul>
-  <li>Status: <%= @subscription.state %></li>
-  <li>Item: <%= @subscription.box_sku %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@subscription.amount) %></li>
-<ul>
+  <li>Item: <%= @subscription.box.title %> </li>
+  <li>Quantity: <%= @subscription.quantity %> </li>
+  <li>Duration: <%= @subscription.duration %> </li>
+  <li>Delivery address: <%= @subscription.delivery_address %> </li>
+  <li>Payment status: <%= @subscription.state %> </li>
+  <li>Total amount: <%= humanized_money_with_symbol(@subscription.amount) %> </li>
+</ul>
+<p>We hope to see you very soon on Gorilla!</p>
+</br>
+<%= link_to "My subscriptions", subscriptions_path %>
+</br>
+</br>
+<%= link_to "Home", boxes_path %>

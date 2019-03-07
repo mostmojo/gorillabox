@@ -1,20 +1,23 @@
-<h1>My Subscriptions</h1>
+<h1>My Subscriptions / Dashboard </h1>
 <% @subscriptions.each do |subscription| %>
-  <% if subscription.box_id == 1 %>
-      <p><%= link_to "Box: Babyrilla", subscription_path(subscription)%></p>
-  <% elsif subscription.box_id == 2 %>
-      <p><%= link_to "Box: Normarilla", subscription_path(subscription)%></p>
-  <% elsif subscription.box_id == 3 %>
-      <p><%= link_to "Box: Gorilla", subscription_path(subscription)%></p>
-  <% end %>
-  <p>Delivery Date: <%= subscription.delivery_date  %></p>
-  <p>Duration: <%= subscription.duration  %></p>
-  <p><%= link_to "Edit", edit_subscription_path(subscription) %></p>
-  <%= link_to subscription_path(subscription), method: :delete do %>
-    <i class="far fa-trash-alt"></i>
-  <% end %>
+  Box Name: <%= subscription.box.title %>
+    </br>
+  Quantity: <%= subscription.quantity %>
+    </br>
+  Duration: <%= subscription.duration %>
+    </br>
+  Delivery address: <%= subscription.delivery_address %>
+    </br>
+  Total amount: £<%= subscription.amount  %>
+    </br>
+  <%= link_to "EDIT", edit_box_subscription_path(subscription.box, subscription) %>
+    </br>
+  <%= link_to "DELETE", box_subscription_path(subscription.box, subscription),
+        method: :delete,
+        data: {confirm: "Are you sure>"} %>
+    </br>
+  <%= link_to "Review this Box",new_box_review_path(subscription.box, subscription) %>
 
-  <p> ----------------- </p>
+  <p>---------------------</p>
 <% end %>
-
 

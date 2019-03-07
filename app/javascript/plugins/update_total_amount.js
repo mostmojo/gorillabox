@@ -2,8 +2,9 @@ const update_total_amount = () => {
 
   const hiddenPrice = document.getElementById('hidden_price')
   if (hiddenPrice) {
-    let boxPrice = hiddenPrice.innerHTML
+    var boxPrice = hiddenPrice.innerHTML
   }
+
   const quantityBar = document.getElementById("subscription_quantity")
 
   if (quantityBar) {
@@ -17,7 +18,7 @@ const update_total_amount = () => {
       }
 
     })
-    
+
   }
 };
 
