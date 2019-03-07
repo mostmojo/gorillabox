@@ -7,6 +7,9 @@
   <li>Item: <%= @subscription.box.title %> </li>
   <li>Quantity: <%= @subscription.quantity %> </li>
   <li>Duration: <%= @subscription.duration %> </li>
+  <div id="hidden_delivery_address", style="display: none;">
+    <%= @subscription.delivery_address %>
+  </div>
   <li>Delivery address: <%= @subscription.delivery_address %> </li>
   <li>Payment status: <%= @subscription.state %> </li>
   <li>Total amount: <%= humanized_money_with_symbol(@subscription.amount) %> </li>
