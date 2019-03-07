@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :set_subscription
+  before_action :set_subscription, only: [:create, :new]
 
   def new
   end
@@ -17,9 +17,6 @@ class PaymentsController < ApplicationController
   currency:     @subscription.amount.currency
   )
 
-  @subscription.update(payment: charge.to_json, state: 'paid')
-  redirect_to subscription_path(@subscription)
-
     @subscription.update(payment: charge.to_json, state: 'paid')
     current_user.has_subscription = true
     redirect_to subscription_path(@subscription)
@@ -31,6 +28,6 @@ class PaymentsController < ApplicationController
   private
 
   def set_subscription
-    @subscription = current_user.subscriptions.where(state: 'pending').find(params[:subscription_id])
+    @subscription = Subscription.find(params[:subscription_id])
   end
 end

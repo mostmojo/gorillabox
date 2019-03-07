@@ -4,6 +4,10 @@ import { update_total_amount } from "../plugins/update_total_amount.js"
 import { smooth_scroll_application } from "../plugins/smooth_scroll_application.js"
 import { review_stars } from "../plugins/review_stars.js"
 import { reviews_sliding } from "../plugins/reviews_sliding.js"
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import { initMapbox } from '../plugins/init_mapbox';
+
+initMapbox();
 
 initAutocomplete();
 update_total_amount();
