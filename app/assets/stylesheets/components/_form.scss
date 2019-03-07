@@ -102,3 +102,11 @@
   width: 380px;
   margin-top: 24px;
 }
+
+.box-name {
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #white;
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.1);
+  transition: background 0.3s ease;
+}

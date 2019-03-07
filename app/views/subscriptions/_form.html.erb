@@ -3,19 +3,21 @@
   </div>
     <div class="payment-right">
       <div class="payment-text">
-        <h1>Order it now</h1>
-        <p>Please enter your details below</p>
+        <h1>Order</h1>
+        <p>Enter your details below</p>
       </div>
 
     <%= simple_form_for [@box, @subscription] do |f| %>
       <% f.input :user_id %>
 
-        <div id="title">
-          Box Name: <%= @box.title %>
+        <div class="f-inputs">
+          <p style="color: black">Box name</p> 
+          <p class="box-name"><%= @box.title %></p>
         </div>
 
-        <div id="price">
-          Box Price: £<%= @box.price %>
+        <div class="f-inputs">
+          <p style="color: black">Price</p> 
+          <p class="box-name"><%= @box.price %></p>
         </div>
 
         <div id="hidden_price", style="display: none;">
