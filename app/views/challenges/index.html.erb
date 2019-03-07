@@ -1,18 +1,19 @@
 
+<!--     <h1 style="text-align: center;">Challenges</h1>
 
-    <h1 style="text-align: center;">Challenges</h1>
+
     	  <section class="task-list current">
     	    <ul>
-    	      <li>
+    	      <li> -->
               <!-- First Check -->
-    	        <div class="checkbox">
+<!--     	        <div class="checkbox">
     	          <div class="check">
     	            <input type="checkbox" name="task_00">
     	            <div class="check-container">
     	              <div class="check-off"></div>
-    	              <div class="check-on"><i></i></div>
-    	
-    	            </div>
+    	              <div class="check-on"><i></i></div> -->
+
+<!--     	            </div>
     	          </div>
     	          <div class="label">
     	            <mark><strong>Pushups</strong> 👉 30 x 4</mark>
@@ -40,9 +41,9 @@
     	            <input type="checkbox" name="task_01">
     	            <div class="check-container">
     	              <div class="check-off"></div>
-    	              <div class="check-on"><i></i></div>
+    	              <div class="check-on"><i></i></div> -->
 
-    	            </div>
+<!--     	            </div>
     	          </div>
     	          <div class="label">
                     <mark><strong>Burpees</strong> 👉 10 x 4</mark>
@@ -55,9 +56,9 @@
     	            <input type="checkbox" name="task_02">
     	            <div class="check-container">
     	              <div class="check-off"></div>
-    	              <div class="check-on"><i></i></div>
+    	              <div class="check-on"><i></i></div> -->
 
-    	            </div>
+<!--     	            </div>
     	          </div>
     	          <div class="label">
     	            <mark><strong>Jumping Jacks</strong> 👉 20 x 4</mark>
@@ -65,6 +66,29 @@
     	        </div>
     	      </li>
     	    </ul>
+    	  </section> -->
+
+<br>
+<br>
+<div class="container">
+  <div class="challenges-header">
+    <h1>My Completed Challenges</h1>
+    <% @completed_challenges.each do |challenge| %>
+      <p><%= challenge.title %></p>
+    <% end %>
+  </div>
+  <ul>
+    <div class="challenges-container">
+      <% @incomplete_challenges.each do |challenge| %>
+        <p><%= challenge.title %></p>
+        <%= link_to "complete", complete_challenge_path(challenge), method: :post %>
+      <% end %>
+    </div>
+  </ul>
+</div>
+<div class="booking-button-position-center">
+  <%= link_to "connect with app", "https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=22DKBD&redirect_uri=https%3A%2F%2Fwww.gorillabox.co&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800" %>
+</div>
     	  </section>
 
         <div>
