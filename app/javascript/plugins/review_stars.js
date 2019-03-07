@@ -1,4 +1,3 @@
-
 const review_stars = () => {
   const reviewInput = document.querySelector("#review_stars")
 
@@ -8,6 +7,6 @@ const review_stars = () => {
       reviewInput.value = event.currentTarget.value
     })
   })
-}
+};
 
 export { review_stars };

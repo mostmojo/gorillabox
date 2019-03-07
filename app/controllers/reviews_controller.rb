@@ -9,7 +9,8 @@ class ReviewsController < ApplicationController
    @box = Box.find(params[:box_id])
    @review = Review.new(review_params)
    @review.box = @box
-   if review.save
+   @review.user = current_user
+   if @review.save
      redirect_to box_path(@box)
    else
      render :new
