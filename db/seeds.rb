@@ -42,20 +42,6 @@ boxes_attributes = [
    image3: "https://s3.amazonaws.com/cratejoy-marketplace-images/814024b20e114530bce79521fadd5cda_600_70.jpeg",
    image4: "https://s3.amazonaws.com/cratejoy-marketplace-images/0a2096ac83f64a0d8d4655e9f6913c8e_600_70.jpeg",
  },
- {
-   title: 'Normarilla',
-   description: 'Awesome box',
-   price_cents: 2000,
-   sku: 'Normarilla',
-   contents: 'Something more than the common healthy products. A powerful combo of super goodies.',
- },
- {
-   title: 'Gorilla',
-   description: 'Premium box',
-   price_cents: 2500,
-   sku: 'Gorilla',
-   contents: 'For the active-goers looking to make the extra step with a healthier, organic super box',
- }
 ]
 Box.create!(boxes_attributes[0])
 Box.create!(boxes_attributes[1])

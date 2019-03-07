@@ -6,14 +6,15 @@
         <h1>Your monthly box of <br><span style="color: #AA96DA">healthy</span> goodness.</h1>
         <p>A monthly subscription box filled with healthy, low cost &<br> organic products, hand picked by experts.</p>
 
-        <div class="btn btn-green">
-            <a>Order a box</a>
+        <div>
+            <a class="btn btn-green section1" href="#">Order a box</a>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-6">
-        <%= video_tag("mint_tea2.mp4", autoplay: "autoplay", muted: "muted", loop: "loop", class: "bg-video") %>
-      </div>
+    <div class="col-md-6 col-lg-6">
+      <%= video_tag("mint_tea.mp4", autoplay: "autoplay", muted: "muted", loop: "loop", class: "bg-video") %>
+    </div>
+
   </div>
 </div>
 
@@ -49,11 +50,11 @@
 
   <div class="container pb-5 pt-5">
     <div class="row">
-      <h2 class="text-center col-12">Choose the right box for you</h2>
+        <h2 class="text-center col-12 section2">Choose the right box for you</h2>
     </div>
   </div>
 
-  <div class="container pb-5">
+  <div class="container pb-5 mb-3">
     <div class="row">
       <% @boxes.each do |box|  %>
         <%= link_to box_path(box), class:"col-lg-4" do %>
