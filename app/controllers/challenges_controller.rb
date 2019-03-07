@@ -32,5 +32,4 @@ class ChallengesController < ApplicationController
   def set_challenge
     @challenge = Challenge.find(params[:id])
   end
-
 end

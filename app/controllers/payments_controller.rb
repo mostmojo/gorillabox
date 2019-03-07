@@ -5,10 +5,10 @@ class PaymentsController < ApplicationController
   end
 
   def create
-  customer = Stripe::Customer.create(
-  source: params[:stripeToken],
-  email:  params[:stripeEmail]
-  )
+    customer = Stripe::Customer.create(
+      source: params[:stripeToken],
+      email: params[:stripeEmail]
+    )
 
   charge = Stripe::Charge.create(
   customer:     customer.id, # You should store this customer id and re-use it.
@@ -20,6 +20,9 @@ class PaymentsController < ApplicationController
   @subscription.update(payment: charge.to_json, state: 'paid')
   redirect_to subscription_path(@subscription)
 
+    @subscription.update(payment: charge.to_json, state: 'paid')
+    current_user.has_subscription = true
+    redirect_to subscription_path(@subscription)
   rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to new_subscription_payment_path(@subscription)
