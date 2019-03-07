@@ -47,6 +47,8 @@
         <%= f.input :set_goals, collection: ["Mass & Power", "Lean Muscle", "Endurance", "Fat Loss", "Other"],
                         required: true,
                         input_html: { autocomplete: "set-goals" } %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
       </div>
                         <br>
       <div class="form-actions-2">
@@ -57,6 +59,5 @@
     <%= link_to "Back", :back %>
     <% end %>
       <br>
-
   </div>
 </div>
