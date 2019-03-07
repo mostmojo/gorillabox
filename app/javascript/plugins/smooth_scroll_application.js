@@ -1,6 +1,6 @@
 
       function smoothScroll(target, duration){
-        var target = document.querySelector(target); 
+        var target = document.querySelector(target);
         var targetPosition = target.getBoundingClientRect().top;
         var startPosition = window.pageYOffset;
         var distance = targetPosition - startPosition;
@@ -26,11 +26,13 @@
 
   const smooth_scroll_application = () => {
       var section1 = document.querySelector('.section1');
-      section1.addEventListener('click',function(){
-        smoothScroll('.section2', 2000);
-      });
+      if (section1) {
+        section1.addEventListener('click',function(){
+          smoothScroll('.section2', 2000);
+        });
+      }
     };
-      
+
 
 export { smooth_scroll_application };
 

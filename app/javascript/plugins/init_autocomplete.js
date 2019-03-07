@@ -1,4 +1,3 @@
-
 // app/javascript/plugins/init_autocomplete.js
 import places from 'places.js';
 
