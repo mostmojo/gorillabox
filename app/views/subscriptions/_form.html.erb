@@ -1,22 +1,42 @@
-<%= simple_form_for [@box, @subscription] do |f| %>
-  <% f.input :user_id %>
-  Box Name: <%= @box.title %>
-  </br>
-  </br>
-  Box Price: £<%= @box.price %>
-  </br>
-  </br>
-    <div id="price", style="display: none;">
-      <%= @box.price %>
-    </div>
-  <%= f.input :quantity %>
-  <%= f.input :duration %>
 
-  <p>Is your billing address the same as your delivery address?</p>
+<div class="container">
+  <div class="login-page">
+    <div class="login-left">
+
+    </div>
+    <div class="login-right">
+    <%= simple_form_for [@box, @subscription] do |f| %>
+    <% f.input :user_id %>
+    <p>Box Name: <%= @box.title %></p>
+      <div id="price">
+        Box Price: £<%= @box.price %>
+      </div>
+      <div id="price", style="display: none;">
+      <%= @box.price %>
+    <%= f.input :quantity %>
+    <%= f.input :duration %>
+
+
+      <div class="form-inline d-flex justify-content-between mb-2">
+        <%= f.input :delivery_date, as: :date, html5: true, input_html: {value: Date.today + 3} %>
+      </div>
+
+      Total Amount:
+      <div id="total">
+      </div>
+
+    <%= f.submit "Confirm", class: 'btn-purple' %>
+
+  <% end %>
+  </div>
+</div>
+</div>
+
+<!--   <p>Is your billing address the same as your delivery address?</p>
   <label class="switch">
     <input type="checkbox">
     <span class="slider round"></span>
-  </label>
+  </label> -->
 
   <%= f.input :delivery_address %>
 
@@ -32,7 +52,6 @@
   </br>
   <%= f.submit "Confirm", class: 'btn btn-primary' %>
 
-<% end %>
 
 
 
