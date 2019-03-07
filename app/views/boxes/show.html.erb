@@ -1,265 +1,210 @@
 <div class="container">
-<div class="show-title">
-  <h1>Norma<span class="green-text">rilla</span></h1>
-</div>
-
-
-
-
-<div class="show-product">
-
-  <div class="flex-tab">
-  <!-- The expanding image container -->
-  <!-- <div class="container"> -->
-    <!-- Close the image -->
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-
-    <!-- Expanded image -->
-      <img id="expandedImg" style="width:60%">
-
-      <!-- Image text -->
-      <div id="imgtext"></div>
-  <!-- </div> -->
-
-  <!-- The grid: four columns -->
-  <div class="row-1" style="display: flex; justify-content: center;">
-    <div class="column">
-      <img id="active" class='show-product-images' src="<%= asset_url 'b6.jpg' %>" alt="Protein bars" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-      <img class='show-product-images' src="<%= asset_url 'b16.jpg' %>" alt="Fruits" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-      <img class='show-product-images' src="<%= asset_url 'b20.jpg' %>" alt="Milkshakes" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-      <img class='show-product-images' src="<%= asset_url 'b19.jpg' %>" alt="Energy bars" onclick="myFunction(this);">
-    </div>
+  <div class="show-title">
+    <h1><%= @box.title %></h1>
   </div>
-
-  </div>
-
-  <div class="show-right">
-    <h2>Choose a subscription</h2>
-    <p><strong>One off</strong></p>
-    <p>monthly price</p>
-    <p>Price: <%= humanized_money_with_symbol(@box.price) %></p>
-    <%= form_tag new_box_subscription_path(@box), method: :get do %>
-      <%= hidden_field_tag 'box_id', @box.id %>
-      <%= submit_tag 'Order a box', class: "btn-purple" %>
-    <% end %> 
-    <div class="show-overview">
-      <h3>Product overview</h3>
-      <p>A lovingly curated collection of healhty food & drink, ingredients and supplements designed to support activity and recovery for both men & women.</p>
-    </div>
-  </div>
-</div>
-
-<!-- CAROUSEL REVIEWS -->
-<h2>Reviews</h2>
-<br>
-<br>
-<!--Carousel Wrapper-->
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-
-  <!--Controls-->
-  <div class="controls-top text-center">
-    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
-  </div>
-  <!--/.Controls-->
-
-  <!--Indicators-->
-  <ol class="carousel-indicators">
-    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-    <li data-target="#multi-item-example" data-slide-to="1"></li>
-    <li data-target="#multi-item-example" data-slide-to="2"></li>
-  </ol>
-  <!--/.Indicators-->
-
-  <!--Slides-->
-  <div class="carousel-inner" role="listbox">
-
-    <!--First slide-->
-    <div class="carousel-item active">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-2">
-            <div class="card-body">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
-              alt="Card image cap">
-              <div class="card-content">
-              <h4 class="card-title"><strong>Rory</strong></h4>
-              <p>February 2019</p>
-              <p>Stars</p>
-              </div>
-            </div>
-              <p class="card-text">I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. Most of all, the monthly challenges motivated me!</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-2">
-            <div class="card-body">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-              alt="Card image cap">
-              <div class="card-content">
-                <h4 class="card-title"><strong>Jack</strong></h4>
-                <p>March 2019</p>
-                <p>Stars</p>
-              </div>
-            </div>
-              <p class="card-text">Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-2">
-            <div class="card-body">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-            <div class="card-content">
-              <h4 class="card-title"><strong>Pablo</strong></h4>
-              <p>January 2019</p>
-              <p>Stars</p>
-            </div>
-            </div>
-              <p class="card-text">I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.</p>
-          </div>
-        </div>
+  <div class="product-info">
+    <div class="show-left">
+      <div class="expanding-container">
+        <!-- Close the image -->
+        <!-- Expanded image -->
+        <!-- <img id="expandedImg" style="width:100%"> -->
+        <%= image_tag @box.main_image, id: "expandedImg" %>
 
       </div>
-
-    </div>
-    <!--/.First slide-->
-
-    <!--Second slide-->
-    <div class="carousel-item">
+      <!-- The grid: four columns -->
       <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-2">
-            <div class="card-body">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
-              alt="Card image cap">
-              <div class="card-content">
-                <h4 class="card-title"><strong>Mike</strong></h4>
-                <p>December 2018</p>
-                <p>Stars</p>
-              </div>
-            </div>
-              <p class="card-text">Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.</p>
-          </div>
+        <div class="column">
+          <%= image_tag @box.image1, class: "thumbnail-image", onclick: "myFunction(this);" %>
         </div>
-
-        <div class="col-md-4">
-          <div class="card mb-2">
-            <div class="card-body">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
-              alt="Card image cap">
-              <div class="card-content">
-                <h4 class="card-title"><strong>John</strong></h4>
-                <p>December 2018</p>
-                <p>Stars</p>
-              </div>
-            </div>
-              <p class="card-text">I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.</p>
-          </div>
+        <div class="column">
+          <%= image_tag @box.image2, class: "thumbnail-image", onclick: "myFunction(this);" %>
         </div>
+        <div class="column">
+          <%= image_tag @box.image3, class: "thumbnail-image", onclick: "myFunction(this);" %>
+        </div>
+        <div class="column">
+          <%= image_tag @box.main_image, class: "thumbnail-image", onclick: "myFunction(this);" %>
+        </div>
+      </div>
+    </div>
 
-        <div class="col-md-4">
-          <div class="card mb-2">
-            <div class="card-body">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
-              alt="Card image cap">
+
+
+    <div class="show-right">
+      <div class="show-overview">
+        <h3>Product overview</h3>
+        <p><%= @box.description %></p>
+      </div>
+
+      <h2>Price per month: <%= humanized_money_with_symbol(@box.price) %></h2>
+<!--       <%= form_tag new_box_subscription_path(@box), method: :get do %>
+        <%= hidden_field_tag 'box_id', @box.id %>
+        <%= submit_tag 'Order a box', class: "btn-purple" %>
+      <% end %> -->
+      <h2>Order your box</h2>
+      <%= simple_form_for [@box, Subscription.new] do |f| %>
+        <% f.input :user_id %>
+        <%= f.input :quantity %>
+        <%= f.input :duration %>
+        <%= f.submit "Confirm", class: 'btn-purple' %>
+      <% end %>
+
+    <script>
+      const boxPrice = document.getElementById('price').innerHTML
+      const quantityBar = document.getElementById("subscription_quantity")
+
+      quantityBar.addEventListener('blur', (event) => {
+        const quantity = event.srcElement.valueAsNumber;
+        const total = (boxPrice * quantity)
+        document.getElementById('total').innerHTML = total
+      })
+    </script>
+    </div>
+  </div>
+
+  <div>
+    <h2>Description</h2>
+    <div>
+      <p><%= @box.contents %></p>
+    </div>
+  </div>
+
+  <h2>Reviews</h2>
+  <br>
+    <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <!--Controls-->
+    <div class="controls">
+      <a class="carousel-control-prev" href="#multi-item-example" role="button" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+      <a class="carousel-control-next" href="#multi-item-example" role="button" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+    </div>
+    <!--/.Controls-->
+     <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <div class="card-body">
+              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+                alt="Card image cap">
+                <div class="card-content">
+                <h4 class="card-title"><strong>Rory</strong></h4>
+                <p>February 2019</p>
+                <p>Stars</p>
+                </div>
+              </div>
+                <p class="card-text">I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. Most of all, the monthly challenges motivated me!</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <div class="card-body">
+              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                alt="Card image cap">
+                <div class="card-content">
+                  <h4 class="card-title"><strong>Jack</strong></h4>
+                  <p>March 2019</p>
+                  <p>Stars</p>
+                </div>
+              </div>
+                <p class="card-text">Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <div class="card-body">
+              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
               <div class="card-content">
-                <h4 class="card-title"><strong>Phelim</strong></h4>
+                <h4 class="card-title"><strong>Pablo</strong></h4>
                 <p>January 2019</p>
                 <p>Stars</p>
               </div>
+              </div>
+                <p class="card-text">I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.</p>
             </div>
-              <p class="card-text">I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. The monthly challenges motivated me!</p>
           </div>
-        </div>
-      </div>
-    </div>
-    <!--/.Second slide-->
 
-    <!--Third slide-->
-    <div class="carousel-item">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-2">
-            <div class="card-body">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
-              alt="Card image cap">
-              <div class="card-content">
-              <h4 class="card-title"><strong>George</strong></h4>
-              <p>January 2019</p>
-              <p>Stars</p>
-            </div>
-            </div>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-2">
-            <div class="card-body">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
-              alt="Card image cap">
-              <div class="card-content">
-              <h4 class="card-title"><strong>Ben</strong></h4>
-              <p>January 2019</p>
-              <p>Stars</p>
-            </div>
-            </div>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-2">
-            <div class="card-body">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
-              alt="Card image cap">
-              <div class="card-content">
-              <h4 class="card-title"><strong>Eden</strong></h4>
-              <p>January 2019</p>
-              <p>Stars</p>
-            </div>
-            </div>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card</p>
-          </div>
         </div>
 
       </div>
+      <!--/.First slide-->
 
-    </div>
-    <!--/.Third slide-->
+            <!--Second slide-->
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <div class="card-body">
+              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                alt="Card image cap">
+                <div class="card-content">
+                  <h4 class="card-title"><strong>Mike</strong></h4>
+                  <p>December 2018</p>
+                  <p>Stars</p>
+                </div>
+              </div>
+                <p class="card-text">Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.</p>
+            </div>
+          </div>
 
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <div class="card-body">
+              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                alt="Card image cap">
+                <div class="card-content">
+                  <h4 class="card-title"><strong>John</strong></h4>
+                  <p>December 2018</p>
+                  <p>Stars</p>
+                </div>
+              </div>
+                <p class="card-text">I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <div class="card-body">
+              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                alt="Card image cap">
+                <div class="card-content">
+                  <h4 class="card-title"><strong>Phelim</strong></h4>
+                  <p>January 2019</p>
+                  <p>Stars</p>
+                </div>
+              </div>
+                <p class="card-text">I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. The monthly challenges motivated me!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/.Second slide-->
+          <!--/.Slides-->
   </div>
-  <!--/.Slides-->
-
+  <!--/.Carousel Wrapper-->
 </div>
-<!--/.Carousel Wrapper-->
-
-</div>
-
 
 <script>
-  document.getElementById('active').click();
-
   function myFunction(imgs) {
-  // Get the expanded image
-  var expandImg = document.getElementById("expandedImg");
-  // Get the image text
-  var imgText = document.getElementById("imgtext");
-  // Use the same src in the expanded image as the image being clicked on from the grid
-  expandImg.src = imgs.src;
-  // Use the value of the alt attribute of the clickable image as text inside the expanded image
-  imgText.innerHTML = imgs.alt;
-  // Show the container element (hidden with CSS)
-  expandImg.parentElement.style.display = "block";
-}
+    // Get the expanded image
+    var expandImg = document.getElementById("expandedImg");
+    // Get the image text
+    var imgText = document.getElementById("imgtext");
+    // Use the same src in the expanded image as the image being clicked on from the grid
+    expandImg.src = imgs.src;
+    // Use the value of the alt attribute of the clickable image as text inside the expanded image
+    imgText.innerHTML = imgs.alt;
+    // Show the container element (hidden with CSS)
+    expandImg.parentElement.style.display = "block";
+  }
 </script>
+
+</div>
+
+
+
+

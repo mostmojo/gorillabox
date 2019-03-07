@@ -9,13 +9,11 @@
         <div class="btn btn-green">
             <a>Order a box</a>
         </div>
-
       </div>
 
-    <div class="col-md-6 col-lg-6">
-      <%= video_tag("mint_tea2.mp4", autoplay: "autoplay", muted: "muted", loop: "loop", class: "bg-video") %>
-    </div>
-
+      <div class="col-md-6 col-lg-6">
+        <%= video_tag("mint_tea2.mp4", autoplay: "autoplay", muted: "muted", loop: "loop", class: "bg-video") %>
+      </div>
   </div>
 </div>
 
@@ -51,7 +49,7 @@
 
   <div class="container pb-5 pt-5">
     <div class="row">
-        <h2 class="text-center col-12">Choose the right box for you</h2>
+      <h2 class="text-center col-12">Choose the right box for you</h2>
     </div>
   </div>
 
@@ -66,7 +64,7 @@
                 <h2><%= box.title %> </h2>
                 <p><%= box.description %></p>
               </div>
-              <h2 class="card-trip-pricing">£99.99</h2>
+              <h2 class="card-trip-pricing"><%= humanized_money_with_symbol(box.price) %></h2>
             </div>
           </div>
         <% end %>
