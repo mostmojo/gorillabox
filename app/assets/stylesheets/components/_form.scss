@@ -59,3 +59,33 @@
   background: #aebf83;
   color: white;
 }
+
+// STRIPE FORMS CSS
+
+.payment-page {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+}
+
+.payment-left {
+  width: 50%;
+  height: 100vh;
+  padding: 100px;
+  background-image: url('b2.jpg');
+  background-size: 100%;
+}
+
+.payment-text {
+  padding-bottom: 12px;
+}
+
+.payment-right {
+  padding-bottom: 5vh;
+  margin: 0 auto;
+  padding-left: 30vh;
+}
+
+#total {
+  margin-bottom: 12px;
+}
