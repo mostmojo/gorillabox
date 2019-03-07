@@ -1,5 +1,7 @@
 <h1>Subscription Confirmation</h1>
 <p>Congrats! Your Box is on its way</p>
+
+<div class="subscription_details">
 <u>Subscription Details:</u>
 <ul>
   <li>Item: <%= @subscription.box.title %> </li>
@@ -15,3 +17,18 @@
 </br>
 </br>
 <%= link_to "Home", boxes_path %>
+</div>
+
+<div class="map_delivery_address">
+
+<div>
+  <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
+</div>
+

@@ -7,4 +7,5 @@ class Subscription < ApplicationRecord
   validates :delivery_address, presence: true
   validates :amount, presence: true
   # validates_inclusion_of :duration, in: %w( oneoff 3 months 6 months 12 months )
+  geocoded_by :address
 end

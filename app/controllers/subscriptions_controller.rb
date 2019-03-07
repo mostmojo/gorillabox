@@ -8,6 +8,15 @@ class SubscriptionsController < ApplicationController
 
   def show
     @subscription = current_user.subscriptions.where(state: 'paid').find(params[:id])
+
+    @subscriptions_map = Subscription.where.not(latitude: nil, longitude: nil)
+    @markers = @subscriptions_map.map do |subscription|
+      {
+        lng: subscription.longitude,
+        lat: subscription.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { subscription: subscription })
+      }
+    end
   end
 
   def new
