@@ -1,37 +1,63 @@
-<h2>Edit your details <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <div class="form-center">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <div class="form-inputs-2">
+        <h2>Personal Info</h2>
+        <br>
+        <br>
+        <%= f.input :email, required: true, autofocus: true %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <h3>Change password</h2>
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "Old password" } %>
+        <%= f.input :password,
+                    hint: "leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+                        <br>
+                        <br>
+        <h3>Complete your profile</h3>
+                        <br>
+        <%= f.input :date_of_birth, required: false, input_html: {class: "datepicker"}
+                        %>
+        <%= f.input :mobile_number,
+                        required: true,
+                        input_html: { autocomplete: "telephone-number" } %>
+        <%= f.input :billing_address,
+                        required: true,
+                        input_html: { autocomplete: "billing-address" } %>
+        <%= f.input :delivery_address,
+                        required: true,
+                        input_html: { autocomplete: "delivery-address" } %>
+                        <br>
+
+            <%= f.input :gender, required: true, as: :radio_buttons, collection: [['0', 'Female'], ['1', 'Male'], ['2', 'Other']], label_method: :second, value_method: :first %>
+        <%= f.input :set_goals, collection: ["Mass & Power", "Lean Muscle", "Endurance", "Fat Loss", "Other"],
+                        required: true,
+                        input_html: { autocomplete: "set-goals" } %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+      </div>
+                        <br>
+      <div class="form-actions-2">
+        <%= f.button :submit, "Save Changes", class: "btn-purple" %>
+      </div>
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+    <%= link_to "Back", :back %>
     <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+      <br>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
