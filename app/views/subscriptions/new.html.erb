@@ -1,6 +1,46 @@
-<h1>New Subscription</h1>
-<p>Please enter your details below</p>
+<div class="payment-page">
+  <div class="payment-left">
+  </div>
+    <div class="payment-right">
+      <div class="payment-text">
+        <h1>Order it now</h1>
+        <p>Please enter your details below</p>
+      </div>
+    
+    <%= simple_form_for [@box, @subscription] do |f| %>
+      <% f.input :user_id %>
 
-    <%= render 'form', subscription: @subscription %>
-    <%= link_to "Cancel", box_path(@box) %>
+        <div id="title">
+          Box Name: <%= @box.title %>
+        </div>
+
+        <div id="price">
+          Box Price: £<%= @box.price %>
+        </div>
+
+        <div id="hidden_price", style="display: none;">
+          <%= @box.price %>
+        </div>
+
+        <div class="form-inputs">
+          <%= f.input :quantity %>
+          <%= f.input :duration %>
+          <%= f.input :delivery_address %>
+        </div>
+
+        Total Amount:
+        <div id="total"; style="display: inline-block">
+          £0
+        </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Confirm", class: "btn-purple" %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <%= link_to "Cancel", box_path(@box) %>
+
+</div>
 
