@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2019_03_07_145515) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_145515) do
     t.string "state"
     t.string "box_sku"
     t.jsonb "payment"
+    t.string "delivery_address"
     t.integer "quantity"
     t.index ["box_id"], name: "index_subscriptions_on_box_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
@@ -86,13 +85,13 @@ ActiveRecord::Schema.define(version: 2019_03_07_145515) do
     t.string "mobile_number"
     t.boolean "has_subscription", default: false
     t.string "billing_address"
-    t.string "photo"
     t.string "date_of_birth"
     t.string "delivery_address"
     t.string "set_goals"
     t.string "profile_picture"
     t.string "gender"
     t.string "age"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
