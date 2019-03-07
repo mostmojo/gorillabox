@@ -1,9 +1,19 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: %i[show update edit]
   def index
+
     @user = current_user
     @completed_challenges = Challenge.where(completed: true)
     @incomplete_challenges = Challenge.where(completed: false)
+    @challenges = Challenge.where.not(latitude: nil, longitude: nil)
+    @markers = @challenges.map do |challenge|
+      {
+        lng: challenge.longitude,
+        lat: challenge.latitude,
+        # infoWindow: render_to_string(partial: "infowindow", locals: { challenge: challenge })
+      }
+      end
+
   end
 
   def show

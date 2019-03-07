@@ -1,5 +1,7 @@
 
 <!--     <h1 style="text-align: center;">Challenges</h1>
+
+
     	  <section class="task-list current">
     	    <ul>
     	      <li> -->
@@ -87,6 +89,14 @@
 <div class="booking-button-position-center">
   <%= link_to "connect with app", "https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=22DKBD&redirect_uri=https%3A%2F%2Fwww.gorillabox.co&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800" %>
 </div>
+    	  </section>
 
-
-
+        <div>
+              <div
+              id="map"
+              style="width: 100%;
+              height: 600px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
+        </div>

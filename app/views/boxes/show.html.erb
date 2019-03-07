@@ -33,23 +33,19 @@
         <h3>Product overview</h3>
         <p><%= @box.description %></p>
       </div>
-
-      <p>Price per box: <%= humanized_money_with_symbol(@box.price) %></p>
-      <%= form_tag new_box_subscription_path(@box), method: :get do %>
-        <%= hidden_field_tag 'box_id', @box.id %>
-        <%= submit_tag 'Order', class: "btn-purple" %>
-      <% end %>
+      <div class="form-price">
+        <p><strong>Price per box: <%= humanized_money_with_symbol(@box.price) %></strong></p>
+        <%= form_tag new_box_subscription_path(@box), method: :get do %>
+          <%= hidden_field_tag 'box_id', @box.id %>
+          <%= submit_tag 'Buy Now', class: "btn-purple"%>
+        <% end %>
+      </div>
     </div>
   </div>
-
-<!--   <div>
-    <h2>Description</h2>
-    <div>
-      <p><%= @box.contents %></p>
-    </div>
-  </div> -->
-
+<br>
+<br>
   <h2>Reviews</h2>
+  <br>
   <br>
     <!--Carousel Wrapper-->
   <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -172,4 +168,17 @@
 
 
 
-
+<script>
+  function myFunction(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}
+</script>

@@ -2,15 +2,18 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'boxes#index'
+  resources :subscriptions, only: [:index]
   resources :boxes, only: [:index, :show] do
-    resources :subscriptions, only: [:new, :create]
+    resources :subscriptions, only: [:new, :show, :create, :edit, :update, :destroy]
     resources :reviews, only: [:new, :create]
   end
+  
   resources :challenges, only: [:index, :show, :edit, :update] do
     member do
       post 'complete'
     end
   end
+  
   resources :subscriptions, only: [:new, :show, :create] do
     resources :payments, only: [:new, :create]
   end
