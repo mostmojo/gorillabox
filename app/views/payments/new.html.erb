@@ -1,8 +1,10 @@
 
 <div class="payment-page">
-  <div class="payment-left">
+  <div class="sub-left">
+    <%= image_tag "forms_2.png" %>
   </div>
     <div class="payment-right">
+      <h1>Confirm your details</h1><br>
       <div class="payment-text">
         <div class="final_invoice">
         <%= @subscription.box_sku %>
@@ -11,45 +13,45 @@
             <div class="f-inputs">
               <label for="Item">
                 <p style="color: black">Item: </p>
-                <p class="box-name" style="width: 250px"><%=@subscription.box.title %></p>
+                <p class="box-name" style="width: 350px"><%=@subscription.box.title %></p>
               </label>
             </div>
             <div class="f-inputs">
               <label for="Quantity">
                   <% if @subscription.quantity == 1 %>
                     <p style="color: black">Quantity:</p>
-                    <p class="box-name" style="width: 250px"> <%= @subscription.quantity %> Box</p>
+                    <p class="box-name" style="width: 350px"> <%= @subscription.quantity %> Box</p>
                   <% else %>
                     <p style="color: black">Quantity:</p>
-                    <p class="box-name" style="width: 250px"><%= @subscription.quantity %></p>
+                    <p class="box-name" style="width: 350px"><%= @subscription.quantity %></p>
                   <% end %>
               </label>
             </div>
             <div class="f-inputs">
               <label for="Duration">
                 <p style="color: black">Duration:</p>
-                <p class="box-name" style="width: 250px"><%=@subscription.duration %></p>
+                <p class="box-name" style="width: 350px"><%=@subscription.duration %></p>
               </label>
             </div>
 
             <div class="f-inputs">
               <label for="Delivery address">
                 <p style="color: black">Delivery address:</p>
-                <p class="box-name" style="width: 250px"><%=@subscription.delivery_address %></p>
+                <p class="box-name" style="width: 350px"><%=@subscription.delivery_address %></p>
               </label>
             </div>
 
             <div class="f-inputs">
               <label for="payment_status">
                 <p style="color: black">Payment Status:</p>
-                <p class="box-name" style="width: 250px"><%=@subscription.state %></p>
+                <p class="box-name" style="width: 350px"><%=@subscription.state %></p>
               </label>
             </div>
 
             <div class="f-inputs">
               <label class="amount">
                 <p style="color: black">Total Amount:</p>
-                <p class="box-name" style="width: 250px"><%= humanized_money_with_symbol(@subscription.amount) %></p>
+                <p class="box-name" style="width: 350px"><%= humanized_money_with_symbol(@subscription.amount) %></p>
               </label>
             </div>
               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button btn-purple"
