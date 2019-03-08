@@ -10,7 +10,7 @@ class ChallengesController < ApplicationController
       {
         lng: challenge.longitude,
         lat: challenge.latitude,
-        # infoWindow: render_to_string(partial: "infowindow", locals: { challenge: challenge })
+        infoWindow: render_to_string(partial: "infowindow", locals: { challenge: challenge })
       }
       end
 
