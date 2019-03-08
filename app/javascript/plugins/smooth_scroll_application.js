@@ -28,7 +28,7 @@
       var section1 = document.querySelector('.section1');
       if (section1) {
         section1.addEventListener('click',function(){
-          smoothScroll('.section2', 2000);
+          smoothScroll('.section2', 700);
         });
       }
     };
