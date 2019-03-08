@@ -8,10 +8,12 @@ import { reviews_sliding } from "../plugins/reviews_sliding.js"
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { init_mapbox } from '../plugins/init_mapbox.js'
 
+
 init_mapbox();
 initAutocomplete();
 update_total_amount();
 smooth_scroll_application();
 review_stars();
 reviews_sliding();
+
 

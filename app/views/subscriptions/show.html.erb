@@ -1,37 +1,45 @@
-<h1>Subscription Confirmation</h1>
-<p>Congrats! Your Box is on its way</p>
 
-<div class="subscription_details">
-<u>Subscription Details:</u>
-<ul>
-  <li>Item: <%= @subscription.box.title %> </li>
-  <li>Quantity: <%= @subscription.quantity %> </li>
-  <li>Duration: <%= @subscription.duration %> </li>
-  <div id="hidden_delivery_address", style="display: none;">
-    <%= @subscription.delivery_address %>
-  </div>
-  <li>Delivery address: <%= @subscription.delivery_address %> </li>
-  <li>Payment status: <%= @subscription.state %> </li>
-  <li>Total amount: <%= humanized_money_with_symbol(@subscription.amount) %> </li>
-</ul>
-<p>We hope to see you very soon on Gorilla!</p>
-</br>
-<%= link_to "My subscriptions", subscriptions_path %>
-</br>
-</br>
-<%= link_to "Home", boxes_path %>
+<div class="container">
+
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <h3>Subscription confirmation</h3>
+          <p>Congrats, your box is on its way! 😊</p>
+
+          <div class="subscription_details">
+          <h3>Details:</h3>
+            <span style="color: #202428"><strong>Item:</strong></span> <span style="color:#969696"><%= @subscription.box.title %></span><br>
+            <span style="color: #202428"><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span><br>
+            <span style="color: #202428"><strong>Duration:</strong></span> <span style="color: #969696"><%= @subscription.duration %></span><br>
+            <span style="color: #202428"><strong>Delivery address:</strong></span> <span style="color: #969696"><%= @subscription.delivery_address %></span><br>
+            <div id="hidden_delivery_address", style="display: none;">
+            <%= @subscription.delivery_address %>
+            </div>
+            <span style="color: #202428"><strong>Payment status:</strong></span> <span style="color: #969696"><%= @subscription.state %> </span><br>
+            <hr>
+           <span style="color: #202428"><strong>Total:</strong></span> <span style="color: #969696"><%= humanized_money_with_symbol(@subscription.amount) %> </span><br>
+           <hr>
+          <p>We hope to see you very soon on Gorilla!</p>
+          </br>
+          <%= link_to "My subscriptions", subscriptions_path %>
+          </br>
+          </br>
+          <%= link_to "Home", boxes_path %>
+          </div>
+
+          <div class="map_delivery_address">
+
+          <div>
+            <div
+                id="map"
+                style="width: 100%;
+                height: 600px;"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
+          </div>
+          </div>
+    </div>
+
 </div>
 
-<div class="map_delivery_address">
-
-<div>
-  <div
-      id="map"
-      style="width: 100%;
-      height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-</div>
-</div>
 
