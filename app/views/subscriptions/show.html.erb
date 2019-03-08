@@ -1,42 +1,55 @@
 <div class="container">
 
-
-    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-          <h3>Subscription confirmation</h3>
-          <p>Congrats, your box is on its way! 😊</p>
-
+    <div class="map-flex">
+              <div
+                  id="map"
+                  style="width: 50%;
+                  height: 600px;"
+                  data-markers="<%= @markers.to_json %>"
+                  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+              ></div>
+    <!-- <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6"> -->
           <div class="subscription_details">
-          <h3>Details:</h3>
-            <span style="color: #202428"><strong>Item:</strong></span> <span style="color:#969696"><%= @subscription.box.title %></span><br>
-            <span style="color: #202428"><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span><br>
-            <span style="color: #202428"><strong>Duration:</strong></span> <span style="color: #969696"><%= @subscription.duration %></span><br>
-            <span style="color: #202428"><strong>Delivery address:</strong></span> <span style="color: #969696"><%= @subscription.delivery_address %></span><br>
-            <span style="color: #202428"><strong>Payment status:</strong></span> <span style="color: #969696"><%= @subscription.state %> </span><br>
-            <hr>
-           <span style="color: #202428"><strong>Total:</strong></span> <span style="color: #969696"><%= humanized_money_with_symbol(@subscription.amount) %> </span><br>
-           <hr>
-          <p>We hope to see you very soon on Gorilla!</p>
-          </br>
-          <%= link_to "My subscriptions", subscriptions_path %>
-          </br>
-          </br>
-          <%= link_to "Home", boxes_path %>
+            <h3>Subscription confirmation</h3>
+            <p>Congrats, your box is on its way! 😊</p>
+
+            <h3>Details:</h3>
+            <div class="f-inputs">
+              <span style="color: #202428"><p class="box-name">Item:</span> <span style="color:#969696"><%= @subscription.box.title %></span></p>
+            </div>
+
+            <div class="f-inputs">
+              <span style="color: #202428"><p class="box-name"><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span></p>
+            </div>
+
+            <div class="f-inputs">
+              <span style="color: #202428"><strong><p class="box-name">Duration:</strong></span> <span style="color: #969696"><%= @subscription.duration %></span></p>
+            </div>
+
+            <div class="f-inputs">
+              <span style="color: #202428"><strong><p class="box-name">Delivery address:</strong></span> <span style="color: #969696"><%= @subscription.delivery_address %></span></p>
+            </div>
+
+            <div class="f-inputs">
+              <span style="color: #202428"><strong><p class="box-name">Payment status:</strong></span> <span style="color: #969696"><%= @subscription.state %> </span></p>
+            </div>
+
+
+            <div class="f-inputs">
+             <strong><p class="box-name" style="color: #AA96DA">Total: <%= humanized_money_with_symbol(@subscription.amount) %></p></strong>
+            </div>
+
+            <p>We hope to see you very soon on Gorilla!</p>
+            </br>
           </div>
 
-          <div class="map_delivery_address">
 
-          <div>
-            <div
-                id="map"
-                style="width: 100%;
-                height: 600px;"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-            ></div>
-          </div>
-          </div>
-    </div>
-
+      </div>
 </div>
 
-
+<style>
+  .map-flex {
+    display: flex;
+    justify-content: space-around;
+  }
+</style>
