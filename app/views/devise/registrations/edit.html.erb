@@ -50,13 +50,15 @@
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
       </div>
-                        <br>
+         <br>
       <div class="form-actions-2">
         <%= f.button :submit, "Save Changes", class: "btn-purple" %>
       </div>
+    </br>
     <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
     <%= link_to "Back", :back %>
+    </br>
     <% end %>
       <br>
   </div>
