@@ -13,7 +13,7 @@ const apiKey = "pk.eyJ1Ijoib21hcmJlcnJhZGEiLCJhIjoiY2pydzhiMXNyMDlhZTQ5dGZmM3hmN
         mapboxgl.accessToken = apiKey;
         const map = new mapboxgl.Map({
           container: 'map',
-          style: 'mapbox://styles/mapbox/streets-v9',
+          style: 'mapbox://styles/mostmojo/cjt01hk7h2kru1fnvje7juc14',
           center: position,
           zoom: 12
         });
