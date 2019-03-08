@@ -64,10 +64,28 @@
 
 // STRIPE FORMS CSS
 
-.payment-page {
+.new-sub-container{
   display: flex;
-  justify-content: space-between;
-  background: white;
+}
+
+.sub-left {
+  width: 50%;
+  height: 100vh;
+}
+
+.sub-left > img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.form-position {
+  width: 40%;
+  margin: 0px 50px;
+}
+
+.form-header > h1 {
+  text-align: center;
 }
 
 .payment-left {
