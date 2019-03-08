@@ -32,6 +32,9 @@
        <%= f.button :submit, "Confirm", class: "btn-purple" %>
      </div>
    <br>
- <p><%= link_to "Cancel", box_path(@box) %></p>
+    <% if request.referer.include?(subscriptions_path) %>
+      <p><%= link_to "Cancel", subscriptions_path %></p>
+    <% elsif request.referer.include?(box_path(@box)) %>
+      <p><%= link_to "Cancel", box_path(@box) %></p>
    <% end %>
-
+  <% end %>
