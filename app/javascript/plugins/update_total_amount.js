@@ -12,9 +12,9 @@ const update_total_amount = () => {
       const quantity = event.srcElement.valueAsNumber;
       const total = (boxPrice * quantity)
       if (isNaN(total)) {
-        document.getElementById('total').innerHTML = `£0`;
+        document.getElementById('total_value').innerHTML = `£0`;
       } else {
-        document.getElementById('total').innerHTML = `£${total}`;
+        document.getElementById('total_value').innerHTML = `£${total}`;
       }
 
     })
