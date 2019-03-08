@@ -11,12 +11,12 @@
       <% f.input :user_id %>
 
         <div class="f-inputs">
-          <p style="color: black">Box name</p> 
+          <p style="color: black">Box name</p>
           <p class="box-name"><%= @box.title %></p>
         </div>
 
         <div class="f-inputs">
-          <p style="color: black">Price</p> 
+          <p style="color: black">Price</p>
           <p class="box-name">£<%= @box.price %></p>
         </div>
 
@@ -26,14 +26,15 @@
 
         <div class="form-inputs">
           <%= f.input :quantity, input_html: {min: "0"} %>
-          <%= f.input :duration %>
+          <%= f.input :duration, collection: ["One Off", "Once a Week", "Twice a Week", "3 Times a Week", "4 Times a Week", "5 Times a Week" , "6 Times a Week", "Everyday"] %>
           <%= f.input :delivery_address %>
         </div>
 
-
           <div id="total" class="f-inputs">
-          <p style="color: black">Total amount</p> 
-          <p>£0</p>
+          <p style="color: black">Total amount</p>
+            <div class id="total_value">
+              <p>£0</p>
+            </div>
         </div>
 
       <div class="form-actions">
@@ -44,7 +45,6 @@
     <% end %>
   </div>
 </div>
-
 
 
 
