@@ -21,6 +21,9 @@
       <label for="Delivery address">
         <span>Delivery address: <%=@subscription.delivery_address %></span>
       </label>
+          <div id="hidden_delivery_address", style="display: none;">
+            <%= @subscription.delivery_address %>
+          </div>
       </br>
       <label for="payment_status">
         <span>Payment Status: <%=@subscription.state %></span>
@@ -37,4 +40,16 @@
     data-amount="<%= @subscription.amount_cents %>"
     data-currency="<%= @subscription.amount.currency %>"></script>
   <% end %>
+
+
+  <div>
+    <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+
 </div>
