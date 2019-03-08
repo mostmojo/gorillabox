@@ -1,43 +1,38 @@
 import mapboxgl from 'mapbox-gl';
+const apiKey = "pk.eyJ1Ijoib21hcmJlcnJhZGEiLCJhIjoiY2pydzhiMXNyMDlhZTQ5dGZmM3hmNnlsayJ9.Zw6BO6U5IPUKeRPFfsV-bg";
 
-const initMapbox = () => {
-  const mapElement = document.getElementById('map');
+  const getCoordinates = (address) => {
+    const urlAddress = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${apiKey}`;
+    fetch(urlAddress)
+      .then(response => response.json())
+      .then((data) => {
+        const position = data.features[0].center;
+        const longitude = position[0];
+        const latitude = position[1];
 
-  const fitMapToMarkers = (map, markers) => {
-  const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+        mapboxgl.accessToken = apiKey;
+        const map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v9',
+          center: position,
+          zoom: 12
+        });
+
+        new mapboxgl.Marker()
+          .setLngLat(position)
+          .addTo(map);
+      });
   };
 
-  if (mapElement) { // only build a map if there's a div#map to inject into
-
-    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
-    });
-    const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(map);
-    });
-    fitMapToMarkers(map, markers);
+  const init_mapbox = () => {
+    const deliveryAddressCheck = document.getElementById('hidden_delivery_address')
+      if (deliveryAddressCheck) {
+        var delivery_address = deliveryAddressCheck.innerHTML
+        getCoordinates(delivery_address)
+      }
   }
 
-  const addMarkersToMap = (map, markers) => {
-    markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // <-- add this
+ export { init_mapbox };
 
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup) // <-- add this
-        .addTo(map);
-    });
-  };
-
-};
-
-export { initMapbox };
 
 

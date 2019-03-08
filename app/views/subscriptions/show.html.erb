@@ -1,4 +1,4 @@
-<div class="container">
+
 
     <div class="map-flex">
               <div
@@ -13,14 +13,40 @@
             <h3>Subscription confirmation</h3>
             <p>Congrats, your box is on its way! 😊</p>
 
+<div class="container">
+
+
             <h3>Details:</h3>
             <div class="f-inputs">
               <span style="color: #202428"><p class="box-name">Item:</span> <span style="color:#969696"><%= @subscription.box.title %></span></p>
             </div>
 
+
             <div class="f-inputs">
               <span style="color: #202428"><p class="box-name"><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span></p>
             </div>
+
+          <div class="subscription_details">
+          <h3>Details:</h3>
+            <span style="color: #202428"><strong>Item:</strong></span> <span style="color:#969696"><%= @subscription.box.title %></span><br>
+            <span style="color: #202428"><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span><br>
+            <span style="color: #202428"><strong>Duration:</strong></span> <span style="color: #969696"><%= @subscription.duration %></span><br>
+            <span style="color: #202428"><strong>Delivery address:</strong></span> <span style="color: #969696"><%= @subscription.delivery_address %></span><br>
+            <div id="hidden_delivery_address", style="display: none;">
+            <%= @subscription.delivery_address %>
+            </div>
+            <span style="color: #202428"><strong>Payment status:</strong></span> <span style="color: #969696"><%= @subscription.state %> </span><br>
+            <hr>
+           <span style="color: #202428"><strong>Total:</strong></span> <span style="color: #969696"><%= humanized_money_with_symbol(@subscription.amount) %> </span><br>
+           <hr>
+          <p>We hope to see you very soon on Gorilla!</p>
+          </br>
+          <%= link_to "My subscriptions", subscriptions_path %>
+          </br>
+          </br>
+          <%= link_to "Home", boxes_path %>
+          </div>
+
 
             <div class="f-inputs">
               <span style="color: #202428"><strong><p class="box-name">Duration:</strong></span> <span style="color: #969696"><%= @subscription.duration %></span></p>
