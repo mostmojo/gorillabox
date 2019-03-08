@@ -1,5 +1,5 @@
-<div class="container">
 
+<div class="container">
 
     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
           <h3>Subscription confirmation</h3>
@@ -11,6 +11,9 @@
             <span style="color: #202428"><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span><br>
             <span style="color: #202428"><strong>Duration:</strong></span> <span style="color: #969696"><%= @subscription.duration %></span><br>
             <span style="color: #202428"><strong>Delivery address:</strong></span> <span style="color: #969696"><%= @subscription.delivery_address %></span><br>
+            <div id="hidden_delivery_address", style="display: none;">
+            <%= @subscription.delivery_address %>
+            </div>
             <span style="color: #202428"><strong>Payment status:</strong></span> <span style="color: #969696"><%= @subscription.state %> </span><br>
             <hr>
            <span style="color: #202428"><strong>Total:</strong></span> <span style="color: #969696"><%= humanized_money_with_symbol(@subscription.amount) %> </span><br>
