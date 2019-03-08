@@ -7,7 +7,11 @@
     <div class="nav-links">
       <% if user_signed_in? %>
           <div class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% if current_user.photo? %>
+              <%= cl_image_tag current_user.photo, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsKGqaYZTRrqz44zgjz8P28vrhEn3rFCpMiBGRiyeoZiKQLryE", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Edit your details", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "My Subscriptions", subscriptions_path, class: "dropdown-item" %>
