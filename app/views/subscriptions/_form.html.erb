@@ -11,12 +11,12 @@
       <% f.input :user_id %>
 
         <div class="f-inputs">
-          <p style="color: black">Box name</p> 
+          <p style="color: black">Box name</p>
           <p class="box-name"><%= @box.title %></p>
         </div>
 
         <div class="f-inputs">
-          <p style="color: black">Price</p> 
+          <p style="color: black">Price</p>
           <p class="box-name">£<%= @box.price %></p>
         </div>
 
@@ -27,12 +27,11 @@
         <div class="form-inputs">
           <%= f.input :quantity, input_html: {min: "0"} %>
           <%= f.input :duration %>
-          <%= f.input :delivery_address %>
         </div>
 
 
           <div id="total" class="f-inputs">
-          <p style="color: black">Total amount</p> 
+          <p style="color: black">Total amount</p>
           <p>£0</p>
         </div>
 
