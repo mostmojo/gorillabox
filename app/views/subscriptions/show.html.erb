@@ -15,15 +15,15 @@
 
             <h3>Details:</h3>
             <div class="f-inputs">
-              <span style="color: #202428"><p class="box-name">Item:</span> <span style="color:#969696"><%= @subscription.box.title %></span></p>
+              <span style="color: #202428"><p class="box-name" style="width: 300px;">Item:</span> <span style="color:#969696"><%= @subscription.box.title %></span></p>
             </div>
 
             <div class="f-inputs">
-              <span style="color: #202428"><p class="box-name"><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span></p>
+              <span style="color: #202428"><p class="box-name" style="width: 300px;><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span></p>
             </div>
 
             <div class="f-inputs">
-              <span style="color: #202428"><strong><p class="box-name">Duration:</strong></span> <span style="color: #969696"><%= @subscription.duration %></span></p>
+              <span style="color: #202428"><strong><p class="box-name" style="width: 300px">Duration:</strong></span> <span style="color: #969696"><%= @subscription.duration %></span></p>
             </div>
 
             <div id="hidden_delivery_address", style="display: none;">
@@ -31,24 +31,25 @@
            </div>
 
             <div class="f-inputs">
-              <span style="color: #202428"><strong><p class="box-name">Delivery address:</strong></span> <span style="color: #969696"><%= @subscription.delivery_address %></span></p>
+              <span style="color: #202428"><strong><p class="box-name" style="width: 300px">Delivery address:</strong></span> <span style="color: #969696"><%= @subscription.delivery_address %></span></p>
             </div>
 
             <div class="f-inputs">
-              <span style="color: #202428"><strong><p class="box-name">Payment status:</strong></span> <span style="color: #969696"><%= @subscription.state %> </span></p>
+              <span style="color: #202428"><strong><p class="box-name" style="width: 300px">Payment status:</strong></span> <span style="color: #969696"><%= @subscription.state %> </span></p>
             </div>
 
 
             <div class="f-inputs">
-             <strong><p class="box-name" style="color: #AA96DA">Total: <%= humanized_money_with_symbol(@subscription.amount) %></p></strong>
+             <strong><p class="box-name" style="color: #AA96DA; width: 300px">Total: <%= humanized_money_with_symbol(@subscription.amount) %></p></strong>
             </div>
 
-            <p>We hope to see you very soon on Gorilla!</p>
+            <p> We hope to see you very soon on Gorilla!</p>
             </br>
           </div>
 
 
       </div>
+
 
 
 <style>
