@@ -8,8 +8,8 @@
   width: 50%;
   height: 80vh;
   // padding: 100px;
-  background-image: url('a3.jpeg');
-  background-size: 100%;
+  background-image: url('forms.png');
+  background-size: cover;
   background-repeat: no-repeat;
   margin-left: 30px;
 }
@@ -64,11 +64,26 @@
 
 // STRIPE FORMS CSS
 
-.payment-page {
+.new-sub-container{
   display: flex;
-  justify-content: space-between;
-  background: white;
 }
+
+.sub-left {
+  width: 50%;
+  height: 100vh;
+}
+
+.sub-left > img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.form-position {
+  width: 40%;
+  margin: 0px 50px;
+}
+
 
 .payment-left {
   width: 50%;
@@ -85,8 +100,9 @@
 
 .payment-right {
   padding-bottom: 5vh;
-  margin: 0 auto;
+  // margin: 0 auto;
   padding-left: 30vh;
+  margin-right: 180px
 }
 
 #total {
@@ -109,4 +125,9 @@
   background: #white;
   box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.1);
   transition: background 0.3s ease;
+}
+
+.payment-page {
+    display: flex;
+    justify-content: space-around;
 }

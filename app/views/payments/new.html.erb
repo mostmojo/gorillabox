@@ -1,40 +1,71 @@
-<div class="final_invoice">
-    <h1>Box Purchase: <%= @subscription.box_sku %></h1>
-    <%= form_tag subscription_payments_path(@subscription) do %>
-    <article>
-      <label for="Item">
-        <span>Item: <%=@subscription.box.title %></span>
-      </label>
-      </br>
-      <label for="Quantity">
-          <% if @subscription.quantity == 1 %>
-            <span> Quantity: <%= @subscription.quantity %> Box</span>
-          <% else %>
-            <span> Quantity: <%= @subscription.quantity %> Boxes</span>
-          <% end %>
-      </label>
-      </br>
-      <label for="Duration">
-        <span>Duration: <%=@subscription.duration %></span>
-      </label>
-      </br>
-      <label for="Delivery address">
-        <span>Delivery address: <%=@subscription.delivery_address %></span>
-      </label>
-      </br>
-      <label for="payment_status">
-        <span>Payment Status: <%=@subscription.state %></span>
-      </label>
-      </br>
-      <label class="amount">
-        <span>Total Amount: <%= humanized_money_with_symbol(@subscription.amount) %></span>
-      </label>
-    </article>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button btn-purple"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-email="<%= current_user.email %>"
-    data-description="Box <%= @subscription.box_sku %>"
-    data-amount="<%= @subscription.amount_cents %>"
-    data-currency="<%= @subscription.amount.currency %>"></script>
-  <% end %>
-</div>
+
+<div class="payment-page">
+  <div class="sub-left">
+    <%= image_tag "forms_2.png" %>
+  </div>
+    <div class="payment-right">
+      <h1>Confirm your details</h1><br>
+      <div class="payment-text">
+        <div class="final_invoice">
+        <%= @subscription.box_sku %>
+          <%= form_tag subscription_payments_path(@subscription) do %>
+          <article>
+            <div class="f-inputs">
+              <label for="Item">
+                <p style="color: black">Item: </p>
+                <p class="box-name" style="width: 350px"><%=@subscription.box.title %></p>
+              </label>
+            </div>
+            <div class="f-inputs">
+              <label for="Quantity">
+                  <% if @subscription.quantity == 1 %>
+                    <p style="color: black">Quantity:</p>
+                    <p class="box-name" style="width: 350px"> <%= @subscription.quantity %> Box</p>
+                  <% else %>
+                    <p style="color: black">Quantity:</p>
+                    <p class="box-name" style="width: 350px"><%= @subscription.quantity %></p>
+                  <% end %>
+              </label>
+            </div>
+            <div class="f-inputs">
+              <label for="Duration">
+                <p style="color: black">Duration:</p>
+                <p class="box-name" style="width: 350px"><%=@subscription.duration %></p>
+              </label>
+            </div>
+
+            <div class="f-inputs">
+              <label for="Delivery address">
+                <p style="color: black">Delivery address:</p>
+                <p class="box-name" style="width: 350px"><%=@subscription.delivery_address %></p>
+              </label>
+            </div>
+
+            <div class="f-inputs">
+              <label for="payment_status">
+                <p style="color: black">Payment Status:</p>
+                <p class="box-name" style="width: 350px"><%=@subscription.state %></p>
+              </label>
+            </div>
+
+            <div class="f-inputs">
+              <label class="amount">
+                <p style="color: black">Total Amount:</p>
+                <p class="box-name" style="width: 350px"><%= humanized_money_with_symbol(@subscription.amount) %></p>
+              </label>
+            </div>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button btn-purple"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-email="<%= current_user.email %>"
+                data-description="Box <%= @subscription.box_sku %>"
+                data-amount="<%= @subscription.amount_cents %>"
+                data-currency="<%= @subscription.amount.currency %>"></script>
+              <% end %>
+
+          </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+

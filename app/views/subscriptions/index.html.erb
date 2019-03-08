@@ -1,23 +1,26 @@
-<h1>My Subscriptions / Dashboard </h1>
-<% @subscriptions.each do |subscription| %>
-  Box Name: <%= subscription.box.title %>
-    </br>
-  Quantity: <%= subscription.quantity %>
-    </br>
-  Duration: <%= subscription.duration %>
-    </br>
-  Delivery address: <%= subscription.delivery_address %>
-    </br>
-  Total amount: £<%= subscription.amount  %>
-    </br>
-  <%= link_to "EDIT", edit_box_subscription_path(subscription.box, subscription) %>
-    </br>
-  <%= link_to "DELETE", box_subscription_path(subscription.box, subscription),
-        method: :delete,
-        data: {confirm: "Are you sure>"} %>
-    </br>
-  <%= link_to "Review this Box",new_box_review_path(subscription.box, subscription) %>
+<div class = "container"></div>
+  <h1>My Subscriptions</h1>
 
-  <p>---------------------</p>
-<% end %>
+  <% @subscriptions.each do |subscription| %>
+    <div class="subscription">
+      <img src='<%= subscription.box.main_image %>' >
+
+      <div class="subscription-order-details">
+        <h2>SUBSCRIPTION <%= subscription.id %></h2>
+        <p>Item: <%= link_to "#{subscription.box.title}", box_path(subscription.box) %><p>
+        <p>Quantity: <%= subscription.quantity %><p>
+        <p>Duration: <%= subscription.duration %><p>
+        <p>Delivery address: <%= subscription.delivery_address %></p>
+        <p>Amount paid: £<%= subscription.amount  %></p>
+        <p><%= link_to "EDIT", edit_box_subscription_path(subscription.box, subscription) %></p>
+        <p><%= link_to "UNSUSCRIBE", box_subscription_path(subscription.box, subscription),
+              method: :delete,
+              data: {confirm: "We are very sad to see you go>"} %></p>
+
+        <p><%= link_to "REVIEW ITEM",new_box_review_path(subscription.box, subscription) %></p>
+      </div>
+    </div>
+  <% end %>
+
+</div>
 
