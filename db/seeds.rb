@@ -1,9 +1,22 @@
-puts 'Cleaning database...'
+puts 'Cleaning Database...'
 Box.destroy_all
 Challenge.destroy_all
 User.destroy_all
+puts 'Database Cleaned!'
 
-puts 'Creating Box...'
+
+
+puts 'Creating Users...'
+user_one = User.create(first_name: "Pablo", email: "pablito@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY", profile_picture: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg")
+user_two = User.create(first_name: "John", email: "john@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY", profile_picture: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg")
+user_three = User.create(first_name: "Alex", email: "alex@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY", profile_picture: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg")
+user_four = User.create(first_name: "Mike", email: "mike@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY", profile_picture: "https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg")
+user_five = User.create(first_name: "Jack", email: "jack@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY", profile_picture: "https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg")
+user_six = User.create(first_name: "Phelim", email: "phelim@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY", profile_picture: "https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg")
+
+puts 'Users Created!'
+
+puts 'Creating Boxes...'
 boxes_attributes = [
  {
    title: 'Babyrilla',
@@ -46,11 +59,124 @@ boxes_attributes = [
 Box.create!(boxes_attributes[0])
 Box.create!(boxes_attributes[1])
 Box.create!(boxes_attributes[2])
-puts 'Finished'
+puts 'Boxes Created!'
 
-user_one = User.create(email: "pablito@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY")
-user_two = User.create(email: "john@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY")
-user_three = User.create(email: "alex@gmail.com", password: "123456", address: "Unit 13, 138 Kingsland Rd, London E2 8DY")
+puts 'Creating Reviews...'
+reviews_attributes = [
+  { description: "I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. Most of all, the monthly challenges motivated me!",
+    stars: "5",
+    user_id: "1",
+    box_id: "1",
+  },
+    { description: "Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.",
+    stars: "5",
+    user_id: "2",
+    box_id: "1",
+  },
+    { description: "I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.",
+    stars: "4",
+    user_id: "3",
+    box_id: "1",
+  },
+    { description: "Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.",
+    stars: "5",
+    user_id: "4",
+    box_id: "1",
+  },
+    { description: "I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.",
+    stars: "3",
+    user_id: "5",
+    box_id: "1",
+  },
+    { description: "I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. The monthly challenges motivated me!",
+    stars: "5",
+    user_id: "6",
+    box_id: "1",
+  },
+    { description: "I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. Most of all, the monthly challenges motivated me!",
+    stars: "5",
+    user_id: "1",
+    box_id: "2",
+  },
+    { description: "Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.",
+    stars: "5",
+    user_id: "2",
+    box_id: "2",
+  },
+    { description: "I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.",
+    stars: "4",
+    user_id: "3",
+    box_id: "2",
+  },
+    { description: "Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.",
+    stars: "5",
+    user_id: "4",
+    box_id: "2",
+  },
+    { description: "I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.",
+    stars: "3",
+    user_id: "5",
+    box_id: "2",
+  },
+    { description: "I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. The monthly challenges motivated me!",
+    stars: "5",
+    user_id: "6",
+    box_id: "2",
+  },
+    { description: "I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. Most of all, the monthly challenges motivated me!",
+    stars: "5",
+    user_id: "1",
+    box_id: "3",
+  },
+    { description: "Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.",
+    stars: "5",
+    user_id: "2",
+    box_id: "3",
+  },
+    { description: "I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.",
+    stars: "4",
+    user_id: "3",
+    box_id: "3",
+  },
+    { description: "Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.",
+    stars: "5",
+    user_id: "4",
+    box_id: "3",
+  },
+    { description: "I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.",
+    stars: "3",
+    user_id: "5",
+    box_id: "3",
+  },
+    { description: "I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. The monthly challenges motivated me!",
+    stars: "5",
+    user_id: "6",
+    box_id: "3",
+  },
+]
+Review.create!(reviews_attributes[0])
+Review.create!(reviews_attributes[1])
+Review.create!(reviews_attributes[2])
+Review.create!(reviews_attributes[3])
+Review.create!(reviews_attributes[4])
+Review.create!(reviews_attributes[5])
+
+Review.create!(reviews_attributes[6])
+Review.create!(reviews_attributes[7])
+Review.create!(reviews_attributes[8])
+Review.create!(reviews_attributes[9])
+Review.create!(reviews_attributes[10])
+Review.create!(reviews_attributes[11])
+
+Review.create!(reviews_attributes[12])
+Review.create!(reviews_attributes[13])
+Review.create!(reviews_attributes[14])
+Review.create!(reviews_attributes[15])
+Review.create!(reviews_attributes[16])
+Review.create!(reviews_attributes[17])
+puts 'Reviews Created!'
+
+
 puts 'Creating Challenges...'
 challenges_attributes = [
  {
@@ -75,3 +201,9 @@ challenges_attributes = [
 Challenge.create!(challenges_attributes[0])
 Challenge.create!(challenges_attributes[1])
 Challenge.create!(challenges_attributes[2])
+puts 'Chanllenges Created!!'
+
+puts '->'
+puts '->'
+puts '-> SEED FILE CREATED'
+
