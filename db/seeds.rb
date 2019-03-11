@@ -32,7 +32,7 @@ boxes_attributes = [
  },
  {
    title: 'Gorilla',
-   description: "Premium box Designed for those who like to snack BIG or with demanding lifestyles which mean they are always on-the-go and can't be without a convenient source of good nutrients. P.s. Also a great solution for snacker who spend long periods in underground bunkers or plan on hibernating!",
+   description: "Premium box designed for those who like to snack BIG or with demanding lifestyles which mean they are always on-the-go and can't be without a convenient source of good nutrients.",
    contents: "18 to 20 products. This parcel will have been curated just for you and will contain a selection of snacks!",
    price_cents: 2500,
    sku: 'Gorilla',
