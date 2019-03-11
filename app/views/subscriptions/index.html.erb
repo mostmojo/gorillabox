@@ -25,16 +25,59 @@
 
           <div class="icons-under-image">
 
-            <%= link_to edit_box_subscription_path(subscription.box, subscription, class: "font-icon-edit") do %>
-                <i class="fa fa-pen" aria-hidden="true" target="_blank"></i>
-              <% end %>
+        <!-- Modal to update subscription -->
+
+
+            <a href="#" data-toggle="modal" data-target="#editModalCenter">
+                <i class="fa fa-pen" data-toggle='modal' aria-hidden="true"></i></a>
+            <div class="modal fade" id="editModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header form-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Edit your subscription</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
 
             <%= link_to box_subscription_path(subscription.box, subscription, class: "font-icon-delete"),
                   method: :delete,
                   data: {confirm: "We are very sad to see you go"} do %><i class="far fa-trash-alt"></i><% end %>
 
-            <%= link_to new_box_review_path(subscription.box, subscription, class: "font-icon-review") do %><i class="far fa-star" aria-hidden="true" target="_blank"></i><% end %>
-          </div>
+
+      <!-- Modal to add a review -->
+
+                <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-star" data-toggle='modal' aria-hidden="true"></i></a>
+
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header form-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Add a review</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= render "shared/new-review", box: subscription.box, review: Review.new %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
         </div>
       </th>
       <div class="subscription-order-details">
