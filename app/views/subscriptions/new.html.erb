@@ -3,6 +3,54 @@
     <%= image_tag "forms_2.png" %>
   </div>
   <div class="form-position" style="height: calc(100vh - 200px);">
-    <%= render 'form', subscription: @subscription %>
+
+   <%= simple_form_for [@box, @subscription] do |f| %>
+     <% f.input :user_id %>
+
+       <div class="f-inputs">
+         <p style="color: black">Box name</p>
+         <p class="box-name"><%= @box.title %></p>
+       </div>
+
+       <div class="f-inputs">
+         <p style="color: black">Price</p>
+         <p class="box-name">£<%= @box.price %></p>
+       </div>
+
+       <div id="hidden_price", style="display: none;">
+         <%= @box.price %>
+       </div>
+
+       <div class="f-inputs">
+         <%= f.input :quantity, input_html: {min: "0"} %>
+         <%= f.input :duration, collection: ["One off", "1 month", "3 months", "6 months", "12 months"] %>
+         <%= f.input :delivery_address %>
+       </div>
+
+         <div id="total" class="f-inputs">
+         <p style="color: black">Total amount</p>
+           <div class id="total_value">
+             <p>£0</p>
+           </div>
+       </div>
+
+     <div class="form-actions">
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button btn-purple"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-email="<%= current_user.email %>"
+          data-description="Box <%= @subscription.box_sku %>"
+          data-amount="<%= @subscription.amount_cents %>"
+          data-currency="<%= @subscription.amount.currency %>">
+          	
+          </script>
+     </div>
+   <br>
+    <% if request.referer.include?(subscriptions_path) %>
+      <p><%= link_to "Cancel", subscriptions_path %></p>
+    <% elsif request.referer.include?(box_path(@box)) %>
+      <p><%= link_to "Cancel", box_path(@box) %></p>
+   <% end %>
+  <% end %>
   </div>
+
 </div>

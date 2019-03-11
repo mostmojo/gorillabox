@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def show
-    @subscription = current_user.subscriptions.where(state: 'paid').find(params[:id])
+    @subscription = Subscription.find(params[:id])
   end
 
   def new
@@ -23,7 +23,7 @@ class SubscriptionsController < ApplicationController
     @subscription.state = "pending"
     @subscription.amount = @subscription.quantity * @subscription.box.price unless @subscription.quantity.nil?
     if @subscription.save
-      redirect_to new_subscription_payment_path(@subscription)
+      redirect_to subscription_path(@subscription)
     else
       render :new
     end
