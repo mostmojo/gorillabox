@@ -61,9 +61,22 @@
 #multi-item-example {
   height: 300px;
   margin-bottom: 40px;
-  padding: 30px;
+  padding: 32px;
   border-style: hidden;
   box-shadow: 5px 5px 5px rgba(68,68,68,0.1);
+}
+
+.carousel-control-next {
+  font-size: 44px;
+  color: lightgrey;
+  right: -70px;
+}
+
+.carousel-control-prev {
+  font-size: 44px;
+  color: lightgrey;
+  left: -70px;
+
 }
 
 .green-text {
