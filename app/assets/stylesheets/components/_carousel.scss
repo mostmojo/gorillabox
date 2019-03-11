@@ -42,6 +42,22 @@
   color:black;
 }
 
+.controls {
+  color:black;
+}
+
+.carousel-control-prev {
+  color: lightgrey;
+  font-size: 42px;
+  left: -70px;
+}
+
+.carousel-control-next {
+  color: lightgrey;
+  font-size: 42px;
+  right: -70px;
+}
+
 #multi-item-example {
   height: 300px;
   margin-bottom: 40px;
