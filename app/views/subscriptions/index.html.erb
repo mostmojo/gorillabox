@@ -1,26 +1,50 @@
 <div class = "container"></div>
-  <h1>My Subscriptions</h1>
+  <h1 style="text-align: center;">My Subscriptions</h1>
+<br>
+<br>
 
-  <% @subscriptions.each do |subscription| %>
-    <div class="subscription">
-      <img src='<%= subscription.box.main_image %>' >
+<table class="table">
+    <thead>
+      <tr class="text-bold">
+        <th scope="col" class="align-middle">Product</th>
+        <th scope="col">Item</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Delivery Address</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+        <% @subscriptions.each do |subscription| %>
+    <tbody>
+      <th scope="row-1" style="width: 60px;">
+        <div class="subscription-row" style="margin: 0;">
+          <div class="image-subscription">
+            <img src='<%= subscription.box.main_image %>' style="width: 160px; height: 100px;" >
+          </div>
 
+
+          <div class="icons-under-image">
+
+            <%= link_to edit_box_subscription_path(subscription.box, subscription, class: "font-icon-edit") do %>
+                <i class="fa fa-pen" aria-hidden="true" target="_blank"></i>
+              <% end %>
+
+            <%= link_to box_subscription_path(subscription.box, subscription, class: "font-icon-delete"),
+                  method: :delete,
+                  data: {confirm: "We are very sad to see you go"} do %><i class="far fa-trash-alt"></i><% end %>
+
+            <%= link_to new_box_review_path(subscription.box, subscription, class: "font-icon-review") do %><i class="far fa-star" aria-hidden="true" target="_blank"></i><% end %>
+          </div>
+        </div>
+      </th>
       <div class="subscription-order-details">
-        <h2>SUBSCRIPTION <%= subscription.id %></h2>
-        <p>Item: <%= link_to "#{subscription.box.title}", box_path(subscription.box) %><p>
-        <p>Quantity: <%= subscription.quantity %><p>
-        <p>Duration: <%= subscription.duration %><p>
-        <p>Delivery address: <%= subscription.delivery_address %></p>
-        <p>Amount paid: £<%= subscription.amount  %></p>
-        <p><%= link_to "EDIT", edit_box_subscription_path(subscription.box, subscription) %></p>
-        <p><%= link_to "UNSUSCRIBE", box_subscription_path(subscription.box, subscription),
-              method: :delete,
-              data: {confirm: "We are very sad to see you go>"} %></p>
-
-        <p><%= link_to "REVIEW ITEM",new_box_review_path(subscription.box, subscription) %></p>
+        <td class="align-middle"><%= link_to "#{subscription.box.title}", box_path(subscription.box), class: "align-middle"%></td>
+        <td class="align-middle"><%= subscription.quantity %></td>
+        <td class="align-middle"><%= subscription.duration %></td>
+        <td class="align-middle"><%= subscription.delivery_address %></td>
+        <td class="align-middle" style="background-color: #AA96DA; color: white; text-align: center;">£<%= subscription.amount  %></td>
       </div>
-    </div>
   <% end %>
-
+  </tbody>
+</table>
 </div>
-
