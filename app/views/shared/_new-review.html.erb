@@ -1,8 +1,6 @@
- <div class="payment-right">
 
-      <h1>Add a review</h1>
       <p> <strong>We would like to know your feedback</strong></p>
-      <%= simple_form_for [@box, @review] do |f| %>
+      <%= simple_form_for [box, review] do |f| %>
        <%= f.input :description %>
        <%= f.input :stars, as: :hidden %>
 
@@ -21,11 +19,9 @@
 
       </br>
       </br>
-        <%= f.button :submit, "Submit", class: "btn-purple" %>
-
+        <%= f.button :submit, "Submit", class: "btn-purple"%>
       <% end %>
 
       </br>
       </br>
-      <%= link_to "Cancel", box_path(@box) %>
   </div>

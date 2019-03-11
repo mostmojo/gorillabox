@@ -2,37 +2,68 @@
   <div class="sub-left">
     <%= image_tag("forms.png", :alt => "log-in", class:"img-fluid mx-auto d-block") %>
   </div>
-    <div class="login-right">
-      <div class="login-text">
-        <h2 class="text-color">Join now!</h2>
-        <p>Tell us your name, email address and create a password</p>
-      </div>
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
 
-      <div class="form-inputs">
-         <%= f.input :first_name,
-                    required: true,
-                    input_html: { autocomplete: "first-name" } %>
-        <%= f.input :last_name,
-                    required: true,
-                    input_html: { autocomplete: "last-name" } %>
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
+  <div class="login-right">
+      <ul class="login-nav nav nav-justified">
+        <li role="presentation" class="<%= 'active' if params[:register] != "true" %>"><a href="#login" data-toggle="tab">Log in</a></li>
+        <li role="presentation" class="<%= 'active' if params[:register] == "true" %>"><a href="#signup" data-toggle="tab">Sign up</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane <%= 'active' if params[:register] != "true" %>" id="login">
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :defaults => { :input_html => { :class => "inputs" } }) do |f| %>
+            <div class="form-inputs">
+              <%= f.input :email,
+                          required: false,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" },
+                          placeholder: "Email",
+                          label: false %>
+              <%= f.input :password,
+                          required: false,
+                          input_html: { autocomplete: "current-password" },
+                          placeholder: "Password",
+                          label: false %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable?%>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Log in", class: "btn-green" %>
+            </div>
+          <% end %>
         </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn-purple" %>
-        <%= render "devise/shared/links" %>
+        <div class="tab-pane <%= 'active' if params[:register] == "true" %>" id="signup">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :defaults => { :input_html => { :class => "inputs" } }) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :first_name, label: false, placeholder: "First name" %>
+              <%= f.input :last_name, label: false, placeholder: "Last name" %>
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true ,
+                          input_html: { value: params["email"], autocomplete: "email" },
+                          label: false,
+                          placeholder: "Email"%>
+              <%= f.input :password,
+                          required: true,
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          input_html: { autocomplete: "new-password" },
+                          label: false,
+                          placeholder: "Password" %>
+              <%= f.input :password_confirmation,
+                          required: true,
+                          input_html: { autocomplete: "new-password" },
+                          label: false,
+                          placeholder: "Confirm Password" %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Sign up", class: "btn-green" %>
+            </div>
+          <% end %>
+        </div>
+
+<!--  <div class="form-actions">
+        <%#= render "devise/shared/links" %>
+      </div> -->
       </div>
-        <% end %>
+    </div>
   </div>
 </div>
