@@ -36,14 +36,10 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
-    <div style="min-height: calc(100vh - 200px)">
-      <%= yield %>
-    <div>
+    <div class="page-wrapper">
+        <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
-
-
-
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
