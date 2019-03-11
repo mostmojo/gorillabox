@@ -15,5 +15,3 @@ update_total_amount();
 smooth_scroll_application();
 review_stars();
 reviews_sliding();
-
-
