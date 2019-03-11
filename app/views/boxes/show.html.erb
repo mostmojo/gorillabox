@@ -44,128 +44,124 @@
   </div>
 <br>
 <br>
-  <h2>Reviews</h2>
+  <h2>Latest Reviews:</h2>
+
   <br>
   <br>
     <!--Carousel Wrapper-->
-  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-    <!--Controls-->
-    <div class="controls">
-      <a class="carousel-control-prev" href="#multi-item-example" role="button" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-      <a class="carousel-control-next" href="#multi-item-example" role="button" data-slide="next"><i class="fas fa-chevron-right"></i></a>
-    </div>
-    <!--/.Controls-->
-     <div class="carousel-inner" role="listbox">
 
-      <!--First slide-->
+
+  <% myReviews = @reviews.sort_by { |review| review['date'] }.reverse %>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="row">
+          <% @reviews.last(3).reverse.each do |review| %>
           <div class="col-md-4">
             <div class="card mb-2">
               <div class="card-body">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
-                alt="Card image cap">
+                <% if review.user.profile_picture != nil  %>
+                  <img class='card-img-top' src="<%= review.user.profile_picture %>" alt='Card image cap'>
+                <% else %>
+                  <img class='card-img-top' src="https://image.flaticon.com/icons/svg/17/17004.svg" alt='Card image cap'>
+                <% end %>
                 <div class="card-content">
-                <h4 class="card-title"><strong>Rory</strong></h4>
-                <p>February 2019</p>
-                <p>Stars</p>
+                  <h4 class="card-title"><strong><%= review.user.first_name %></strong></h4>
+                    <%= review.created_at.strftime("%B") %> <%= review.created_at.year %>
+                    </br>
+                    <% review.stars.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <% (5 - review.stars).times do %>
+                      <i class="far fa-star"></i>
+                    <% end %>
                 </div>
               </div>
-                <p class="card-text">I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. Most of all, the monthly challenges motivated me!</p>
+              <p class="card-text"> <%= review.description %></p>
             </div>
           </div>
-
-          <div class="col-md-4">
-            <div class="card mb-2">
-              <div class="card-body">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                alt="Card image cap">
-                <div class="card-content">
-                  <h4 class="card-title"><strong>Jack</strong></h4>
-                  <p>March 2019</p>
-                  <p>Stars</p>
-                </div>
-              </div>
-                <p class="card-text">Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.</p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card mb-2">
-              <div class="card-body">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-              <div class="card-content">
-                <h4 class="card-title"><strong>Pablo</strong></h4>
-                <p>January 2019</p>
-                <p>Stars</p>
-              </div>
-              </div>
-                <p class="card-text">I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.</p>
-            </div>
-          </div>
-
+          <% end %>
         </div>
-
       </div>
-      <!--/.First slide-->
 
-            <!--Second slide-->
       <div class="carousel-item">
         <div class="row">
+          <% @reviews.slice(-(@reviews.length), 3).reverse.each do |review| %>
           <div class="col-md-4">
             <div class="card mb-2">
               <div class="card-body">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
-                alt="Card image cap">
+                <% if review.user.profile_picture != nil  %>
+                  <img class='card-img-top' src="<%= review.user.profile_picture %>" alt='Card image cap'>
+                <% else %>
+                  <img class='card-img-top' src="https://image.flaticon.com/icons/svg/17/17004.svg" alt='Card image cap'>
+                <% end %>
                 <div class="card-content">
-                  <h4 class="card-title"><strong>Mike</strong></h4>
-                  <p>December 2018</p>
-                  <p>Stars</p>
+                  <h4 class="card-title"><strong><%= review.user.first_name %></strong></h4>
+                    <%= review.created_at.strftime("%B") %> <%= review.created_at.year %>
+                    </br>
+                    <% review.stars.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <% (5 - review.stars).times do %>
+                      <i class="far fa-star"></i>
+                    <% end %>
                 </div>
               </div>
-                <p class="card-text">Gorillabox really got me running monthly and taking care of my body, I really enjoyed the normarilla box as it provided such a vast variety of goodies.</p>
+              <p class="card-text"> <%= review.description %></p>
             </div>
           </div>
-
-          <div class="col-md-4">
-            <div class="card mb-2">
-              <div class="card-body">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
-                alt="Card image cap">
-                <div class="card-content">
-                  <h4 class="card-title"><strong>John</strong></h4>
-                  <p>December 2018</p>
-                  <p>Stars</p>
-                </div>
-              </div>
-                <p class="card-text">I am feeling so much better after using the gorilla box. My muscle mass has improved and I love the 2KM challenge! I'm going to do it by the end of the month I promise.</p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card mb-2">
-              <div class="card-body">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
-                alt="Card image cap">
-                <div class="card-content">
-                  <h4 class="card-title"><strong>Phelim</strong></h4>
-                  <p>January 2019</p>
-                  <p>Stars</p>
-                </div>
-              </div>
-                <p class="card-text">I had an amazing experience with gorillabox. The protein was very tasty, the herbal teas were great for an evening chill-out. The monthly challenges motivated me!</p>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
-      <!--/.Second slide-->
-          <!--/.Slides-->
+
+
+      <div class="controls">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
   </div>
-  <!--/.Carousel Wrapper-->
 </div>
+</br>
+
+<h2>All Reviews: </h2>
+
+
+    <% myReviews.each do |review|%>
+        <div class="review">
+          <div class="card-body">
+                <% if review.user.profile_picture != nil  %>
+                  <img class='card-img-top' src="<%= review.user.profile_picture %>" alt='Card image cap'>
+                <% else %>
+                  <img class='card-img-top' src="https://image.flaticon.com/icons/svg/17/17004.svg" alt='Card image cap'>
+                <% end %>
+                <div class="card-content">
+                  <h4 class="card-title"><strong><%= review.user.first_name %></strong></h4>
+                    <%= review.created_at.strftime("%B") %> <%= review.created_at.year %>
+                    </br>
+                    <% review.stars.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <% (5 - review.stars).times do %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                </div>
+              </br>
+            </div>
+
+                <p class="card-text"> <%= review.description %></p>
+          </div>
+    <% end %>
+  </br>
+
 
 </div>
-
 
 
 <script>

@@ -5,5 +5,6 @@ class BoxesController < ApplicationController
 
   def show
     @box = Box.find(params[:id])
+    @reviews = Review.where(box_id: @box.id)
   end
 end

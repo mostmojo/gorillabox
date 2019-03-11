@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+
+ def index
+  @reviews = Review.all
+ end
+
  def new
    @user = current_user
    @box = Box.find(params[:box_id])

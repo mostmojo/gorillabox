@@ -2,24 +2,26 @@
   <h1>My Subscriptions</h1>
 
   <% @subscriptions.each do |subscription| %>
-    <div class="subscription">
-      <img src='<%= subscription.box.main_image %>' >
+   <% if subscription.user_id = current_user.id %>
+      <div class="subscription">
+        <img src='<%= subscription.box.main_image %>' >
 
-      <div class="subscription-order-details">
-        <h2>SUBSCRIPTION <%= subscription.id %></h2>
-        <p>Item: <%= link_to "#{subscription.box.title}", box_path(subscription.box) %><p>
-        <p>Quantity: <%= subscription.quantity %><p>
-        <p>Duration: <%= subscription.duration %><p>
-        <p>Delivery address: <%= subscription.delivery_address %></p>
-        <p>Amount paid: £<%= subscription.amount  %></p>
-        <p><%= link_to "EDIT", edit_box_subscription_path(subscription.box, subscription) %></p>
-        <p><%= link_to "UNSUSCRIBE", box_subscription_path(subscription.box, subscription),
-              method: :delete,
-              data: {confirm: "We are very sad to see you go>"} %></p>
+        <div class="subscription-order-details">
+          <h2>SUBSCRIPTION <%= subscription.id %></h2>
+          <p>Item: <%= link_to "#{subscription.box.title}", box_path(subscription.box) %><p>
+          <p>Quantity: <%= subscription.quantity %><p>
+          <p>Duration: <%= subscription.duration %><p>
+          <p>Delivery address: <%= subscription.delivery_address %></p>
+          <p>Amount paid: £<%= subscription.amount  %></p>
+          <p><%= link_to "EDIT", edit_box_subscription_path(subscription.box, subscription) %></p>
+          <p><%= link_to "UNSUSCRIBE", box_subscription_path(subscription.box, subscription),
+                method: :delete,
+                data: {confirm: "We are very sad to see you go>"} %></p>
 
-        <p><%= link_to "REVIEW ITEM",new_box_review_path(subscription.box, subscription) %></p>
+          <p><%= link_to "REVIEW ITEM",new_box_review_path(subscription.box, subscription) %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 
 </div>
