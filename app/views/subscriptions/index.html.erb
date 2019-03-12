@@ -8,7 +8,7 @@
       <% end %>
       <%= @user.first_name %> <%= @user.last_name  %>
 
-    <p style="text-align: center;"><i><%= "We would like to know more about you 👇" %>  </p>
+    <p style="text-align: center;"><%= "We would like to know more about you 👇" %></p>
 
       <ul>
         <li><strong>Gender: </strong>
@@ -174,7 +174,7 @@
 
   <% if user_subscriptions == [] %>
   </br>
-    <p style="text-align: center;"><i><%= "You don't have any subscriptions at the moment, please visit our" %><i><%= link_to "product page", boxes_path %>  </p>
+    <p style="text-align: center;"><i><%= "You don't have any subscriptions at the moment, please visit our" %><i><%= link_to "product page", boxes_path %></p>
   <% end %>
 
 
