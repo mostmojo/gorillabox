@@ -52,6 +52,25 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def export_invoice
+     # Export PDF
+      respond_to do |format|
+        format.html
+        format.pdf do
+          render pdf: 'notes',
+                 template: 'subscriptions/1/subscription_pdf.html.haml',
+                 dpi: '96',
+                 :show_as_html                   => params[:debug].present?,
+                 disable_internal_links: true, disable_external_links: true,
+                 :print_media_type => false, :no_background => false
+          return
+        end
+      end
+    end
+
+
+
+
   private
 
   def subscription_params

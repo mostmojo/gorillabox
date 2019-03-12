@@ -1,5 +1,7 @@
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
+  get '/export_invoice/:id' => 'subscriptions#export_invoice', as: :export_invoice
+
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'boxes#index'
   resources :subscriptions, only: [:index]

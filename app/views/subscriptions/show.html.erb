@@ -48,10 +48,13 @@
         <%= link_to root_path do %>
         <p> Home</p>
         <% end %>
+  <%= link_to('Download as PDF', export_invoice_path(id: current_user.id, format: :pdf), target: '_blank') %>
     </div>
     </br>
   </div>
 </div>
+
+
 
 
 
