@@ -19,7 +19,7 @@
     </div>
 
     <div class="f-inputs">
-      <span style="color: #202428"><p class="box-name" style="width: 300px;><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span></p>
+      <span style="color: #202428"><p class="box-name" style="width: 300px"><strong>Quantity:</strong></span> <span style="color: #969696"><%= @subscription.quantity %></span></p>
     </div>
 
     <div class="f-inputs">
@@ -48,11 +48,11 @@
         <%= link_to root_path do %>
         <p> Home</p>
         <% end %>
+  <%= link_to 'Download as PDF', export_notes_path(id: current_user.id, format: :pdf, sub_id: @subscription.id, box_id: @subscription.box.id), target: '_blank' %>
     </div>
     </br>
   </div>
 </div>
-
 
 
 <style>
