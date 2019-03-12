@@ -1,6 +1,77 @@
 
 <div class = "container">
+    <div class="subscription-flex">
+      <div class="subscription-image-flex">
+        <% if @user.photo.nil? %>
+        <i class="fas fa-user"></i>
+        <% else %>
+        <img src= "<%=@user.photo %>" alt="" aria-hidden="true" class="subscription-photo">
+        <% end %>
+      </div>
 
+      <div class="subscription-flex-title">
+        <p style="text-align: center;"><i><%= "We would like to know more about you 👇" %></i></p>
+          <%= @user.first_name %> <%= @user.last_name  %>
+      </div>
+
+      <div class="subscription-flex-content">
+        <ul>
+          <li class="list-style-box"><strong>Gender: </strong>
+            <% if @user.gender.nil? %>
+              <%= link_to "What's your gender?", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.gender %></li>
+            <% end %>
+          <li class="list-style-box"><strong>Date of Birth: </strong>
+            <% if @user.gender.nil? %>
+              <%= link_to "What day were you born on?", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.date_of_birth %></li>
+            <% end %>
+          <li class="list-style-box"><strong>First Name: </strong>
+            <% if @user.first_name.nil? %>
+              <%= link_to "Add", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.first_name %></li>
+            <% end %>
+          <li class="list-style-box"><strong>Last Name: </strong>
+            <% if @user.last_name.nil? %>
+              <%= link_to "What's your last name #{@user.first_name}?", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.last_name %></li>
+            <% end %>
+
+          <li class="list-style-box"><strong>Delivery Address: </strong>
+            <% if @user.delivery_address.nil? %>
+              <%= link_to "Where would you like your next order to be delivered?", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.delivery_address %></li>
+            <% end %>
+          <li class="list-style-box"><strong>Email:</strong>
+            <% if @user.email.nil? %>
+              <%= link_to "Add", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.email %></li>
+            <% end %>
+          <li class="list-style-box"><strong>Mobile: </strong>
+            <% if @user.mobile_number.nil? %>
+              <%= link_to "On which number can we contact you?", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.mobile_number %></li>
+            <% end %>
+          <li class="list-style-box"><strong>Goal: </strong>
+            <% if @user.set_goals.nil? %>
+              <%= link_to "Lean muscle or lose fat?", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.set_goals %></li>
+            <% end %>
+        </ul>
+      </div>
+  </div>
+<br>
+<br>
+<br>
+=======
       <% if @user.photo.nil? %>
       <i class="fas fa-user"></i>
       <% else %>
@@ -68,7 +139,9 @@
       </ul>
 
 <div class = "container"></div>
+
   <h1 style="text-align: center;">My Subscriptions</h1>
+<br>
 <br>
 <table class="table">
     <thead>
@@ -181,3 +254,35 @@
 
 </div>
 
+<style>
+  .subscription-flex {
+    text-align: center;
+    margin-top: 4px;
+    /*border: 1px solid black;*/
+    border-style: hidden;
+    box-shadow: 2px 2px 2px 2px rgba(68,68,68, 0.1);
+  }
+
+  .subscription-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+
+
+  }
+  .list-style-box {
+    list-style: none;
+    margin-top: 12px;
+    width: 380px;
+    padding: 16px;
+  }
+
+.subscription-flex-title {
+  margin-top: 12px;
+}
+.subscription-flex-content {
+  display: flex;
+  justify-content: center;
+}
+</style>
