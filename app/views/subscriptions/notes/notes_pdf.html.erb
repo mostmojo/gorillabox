@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html>
+<head>
+
+<body>
+  <div >
+    <table style="width:100%;" >
+      <tr class="introduction">
+        <td app/assets/images/logo.pgn>
+
+        </td>
+        <td style="width:60%;">
+          <strong> Gorillabox.co ltd</strong></br>
+          <i>Your monthly box of healthy goodness</i></br></br>
+          Unit 13, 138 Kingsland Rd, London E2 8DY</br>
+          020 7729 0146
+        </td>
+        <td style="width:40%;">
+          <p style="text-align:right">
+          <strong> INVOICE </strong></br>
+          Invoice #: <%= rand.to_s[2..11] %></br>
+          Date Issued: <%= (Time.now).hour %>:<%= (Time.now).min  %> | <%= (Time.now).day %>/<%=(Time.now).month %>/<%=(Time.now).year %></br>
+          Due: Paid</br></p>
+        </td>
+      </tr>
+
+    </table>
+
+    <table style="width:100%;">
+       <td>
+        <p style="text-align: right">
+          To: </br>
+          <strong>Name: </strong><%= @subscription.user.first_name %></br>
+          <strong>Email:</strong><%= @subscription.user.email %></br>
+          <strong>Delivery Address: </strong><%= @subscription.user.delivery_address %></br>
+       </p>
+       </td>
+    </table>
+
+
+    <p style="text-align:center"><i>------------------Please find below your order details------------------</i></p>
+
+    <h3>Order Details:</h3>
+    <div class="f-inputs">
+      <strong>Item: </strong> <%= @subscription.box.title %></p>
+    </div>
+
+    <div class="f-inputs">
+      <strong>Quantity: </strong> <%= @subscription.quantity %></p>
+    </div>
+
+    <div class="f-inputs">
+      <strong>Subscription Duration: </strong> <%= @subscription.duration %></p>
+    </div>
+
+    <div id="hidden_delivery_address", style="display: none;">
+      <%= @subscription.delivery_address %>
+   </div>
+
+    <div class="f-inputs">
+      <strong>Delivery address: </strong> <%= @subscription.delivery_address %></p>
+    </div>
+
+    <div class="f-inputs">
+      <strong>Payment status: </strong> <%= @subscription.state %></p>
+    </div>
+
+
+    <div class="f-inputs">
+      <strong>Total: GBP <%=@subscription.amount %></strong>
+    </div>
+
+    </br>
+  </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

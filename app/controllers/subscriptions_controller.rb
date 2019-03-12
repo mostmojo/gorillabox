@@ -52,29 +52,28 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  def export_invoice
-     # Export PDF
-      respond_to do |format|
-        format.html
-        format.pdf do
-          render pdf: 'notes',
-                 template: 'subscriptions/1/subscription_pdf.html.haml',
-                 dpi: '96',
-                 :show_as_html                   => params[:debug].present?,
-                 disable_internal_links: true, disable_external_links: true,
-                 :print_media_type => false, :no_background => false
+  def export_notes
+    @box = Box.find(params[:box_id])
+    @subscription = Subscription.find(params[:sub_id])
+  # Export PDF
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'notes',
+                template: 'subscriptions/notes/notes_pdf.html',
+                dpi: '1000',
+                :show_as_html                   => params[:debug].present?,
+                :print_media_type => false, :no_background => false
           return
         end
       end
-    end
-
-
+  end
 
 
   private
 
   def subscription_params
-    params.require(:subscription).permit(:duration, :quantity, :delivery_address)
+    params.require(:subscription).permit(:duration, :quantity, :delivery_address, :sub_id, :box_id)
   end
 
   def set_subscription
