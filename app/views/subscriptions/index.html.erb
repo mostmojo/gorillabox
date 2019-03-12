@@ -1,14 +1,6 @@
 
+<div class = "container">
 
-<!--   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
-  <link rel="stylesheet" href="./src/styles.css">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#333333">
-
-<body class="bg-black-05 sans-serif pa1" data-gr-c-s-loaded="true">
-
-  <main id="app"><section class="mw7 center br3 mt4 pa3 ba b--black-10 bg-white">
-    <header class="tc"> -->
       <% if @user.photo.nil? %>
       <i class="fas fa-user"></i>
       <% else %>
@@ -119,7 +111,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-
+                        <%= render "shared/new-update", box: subscription.box, subscription: subscription  %>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -188,3 +180,4 @@
 
 
 </div>
+

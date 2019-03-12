@@ -1,3 +1,10 @@
+<div class="main">
+  <div class="navigation-container">
+      <div class="nav-logo">
+          <%= link_to root_path do %>
+           <%= image_tag "logo.svg",  alt: "Gorilla"%>
+          <% end %>
+      </div>
 <div class="navigation-container">
     <div class="nav-logo">
         <%= link_to root_path do %>
@@ -6,21 +13,111 @@
     </div>
     <div class="nav-links">
       <% if user_signed_in? %>
-          <div class="nav-item dropdown">
+        <span onclick="openNav()">
+          <% if current_user.photo? %>
+            <%= cl_image_tag current_user.photo, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, onclick: "openNav()" %>
+          <% else %>
+            <%= image_tag "user.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+        </span>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" style="color: #AA96DA;" onclick="closeNav()">&times;</a>
+        <div class="nav-item dropdown">
+          <div class="avatar-sidenav">
             <% if current_user.photo? %>
-              <%= cl_image_tag current_user.photo, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <% else %>
-                <%= image_tag "user.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= cl_image_tag current_user.photo, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, onclick: "openNav()" %>
+            <% else %>
+              <%= image_tag "user.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Edit your details", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Dashboard", subscriptions_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
           </div>
-        <% else %>
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-        <% end %>
-      </ul>
+          <div class="underline-item">
+            <%= link_to "Edit your details", edit_user_registration_path, class: "dropdown-item" %>
+          </div>
+
+          <div class="underline-item">
+            <%= link_to "My Subscriptions", subscriptions_path, class: "dropdown-item" %>
+          </div>
+
+          <div class="underline-item">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </div>
+      <% else %>
+          <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% end %>
+        </ul>
+       </div>
+      </div>
     </div>
+  </div>
 </div>
+
+
+<style>
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #C6DA96;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.underline-item a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+  color: #aebf83;
+  margin-top: 26px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.underline-item > a:hover {
+  color: #AA96DA;
+  background-color: #C6DA96;
+}
+
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  text-decoration: none;
+
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+<script>
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
