@@ -1,8 +1,83 @@
+
+
+<!--   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+  <link rel="stylesheet" href="./src/styles.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#333333">
+
+<body class="bg-black-05 sans-serif pa1" data-gr-c-s-loaded="true">
+
+  <main id="app"><section class="mw7 center br3 mt4 pa3 ba b--black-10 bg-white">
+    <header class="tc"> -->
+      <% if @user.photo.nil? %>
+      <i class="fas fa-user"></i>
+      <% else %>
+      <img src= "<%=@user.photo %>" alt="" aria-hidden="true">
+      <% end %>
+      <%= @user.first_name %> <%= @user.last_name  %>
+
+    <p style="text-align: center;"><i><%= "We would like to know more about you 👇" %>  </p>
+
+      <ul>
+        <li><strong>Gender: </strong>
+          <% if @user.gender.nil? %>
+            <%= link_to "What's your gender?", edit_user_registration_path  %>
+          <% else %>
+            <%= @user.gender %></li>
+          <% end %>
+        <li><strong>Date of Birth: </strong>
+          <% if @user.gender.nil? %>
+            <%= link_to "What day were you born on?", edit_user_registration_path  %>
+          <% else %>
+            <%= @user.date_of_birth %></li>
+          <% end %>
+        <li><strong>First Name: </strong>
+          <% if @user.first_name.nil? %>
+            <%= link_to "Add", edit_user_registration_path  %>
+          <% else %>
+            <%= @user.first_name %></li>
+          <% end %>
+        <li><strong>Last Name: </strong>
+          <% if @user.last_name.nil? %>
+            <%= link_to "What's your last name #{@user.first_name}?", edit_user_registration_path  %>
+          <% else %>
+            <%= @user.last_name %></li>
+          <% end %>
+        <li><strong>Billing Address: </strong>
+          <% if @user.billing_address.nil? %>
+            <%= link_to "Add", edit_user_registration_path  %>
+          <% else %>
+            <%= @user.billing_address %></li>
+          <% end %></li>
+        <li><strong>Delivery Address: </strong>
+          <% if @user.delivery_address.nil? %>
+            <%= link_to "Where would you like your next order to be delivered?", edit_user_registration_path  %>
+          <% else %>
+            <%= @user.delivery_address %></li>
+          <% end %>
+        <li><strong>Email:</strong>
+          <% if @user.email.nil? %>
+            <%= link_to "Add", edit_user_registration_path  %>
+          <% else %>
+            <%= @user.email %></li>
+          <% end %>
+        <li><strong>Mobile: </strong>
+          <% if @user.mobile_number.nil? %>
+            <%= link_to "On which number can we contact you?", edit_user_registration_path  %>
+          <% else %>
+            <%= @user.mobile_number %></li>
+          <% end %>
+        <li><strong>Goal: </strong>
+          <% if @user.set_goals.nil? %>
+            <%= link_to "Lean muscle or lose fat?", edit_user_registration_path  %>
+          <% else %>
+            <%= @user.set_goals %></li>
+          <% end %>
+      </ul>
+
 <div class = "container"></div>
   <h1 style="text-align: center;">My Subscriptions</h1>
 <br>
-<br>
-
 <table class="table">
     <thead>
       <tr class="text-bold">
@@ -14,8 +89,11 @@
         <th scope="col">Total</th>
       </tr>
     </thead>
+
+
         <% @subscriptions.each do |subscription| %>
         <% if subscription.user_id = current_user.id %>
+
     <tbody>
       <th scope="row-1" style="width: 60px;">
         <div class="subscription-row" style="margin: 0;">
@@ -82,15 +160,31 @@
         </div>
       </th>
       <div class="subscription-order-details">
+
         <td class="align-middle"><%= link_to "#{subscription.box.title}", box_path(subscription.box), class: "align-middle"%></td>
         <td class="align-middle"><%= subscription.quantity %></td>
         <td class="align-middle"><%= subscription.duration %></td>
         <td class="align-middle"><%= subscription.delivery_address %></td>
         <td class="align-middle" style="background-color: #AA96DA; color: white; text-align: center;">£<%= subscription.amount  %></td>
       </div>
+
       <% end %>
-  <% end %>
   <% end %>
   </tbody>
 </table>
+
+<% user_subscriptions = [] %>
+<% @subscriptions.each do |subscription| %>
+  <% if subscription.user_id = current_user.id %>
+    <% user_subscriptions << subscription %>
+  <% end %>
+<% end %>
+
+  <% if user_subscriptions == [] %>
+  </br>
+    <p style="text-align: center;"><i><%= "You don't have any subscriptions at the moment, please visit our" %><i><%= link_to "product page", boxes_path %>  </p>
+  <% end %>
+
+
+
 </div>
