@@ -1,4 +1,4 @@
-<div class = "container"></div>
+<div class = "container">
   <h1 style="text-align: center;">My Subscriptions</h1>
 <br>
 <br>
@@ -41,7 +41,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-
+                        <%= render "shared/new-update", box: subscription.box, subscription: subscription  %>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -90,7 +90,7 @@
       </div>
       <% end %>
   <% end %>
-  <% end %>
   </tbody>
 </table>
 </div>
+
