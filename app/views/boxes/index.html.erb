@@ -52,10 +52,10 @@
     </div>
 </div>
 
-<div class="landing-page-how">
+<div class="landing-page-middle section2">
   <div class="container pb-5 pt-5">
     <div class="row">
-        <h2 class="text-center col-12 section2">Choose the right box for you</h2>
+        <h2 class="text-center col-12 ">Choose the right box for you</h2>
     </div>
   </div>
 
@@ -79,6 +79,28 @@
   </div>
 </div>
 
+<div class="landing-page-footer">
+    <div class="container pb-5">
+      <div class="row">
+          <h2 class="text-center col-12">Ready to reinvent your snacking experience?</h2>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="mx-auto" style="width: 400px;" data-aos="zoom-in">
+            <div>
+              <%= image_tag("footer-illustration.png", :alt => "pick-box", class:"img-fluid mx-auto d-block") %>
+            </div>
+
+              <div class="flex-button-center" style="display: flex; justify-content: center;">
+                <a class="btn btn-green" id="section3" href="#" style="text-align: center;">Order a box</a>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
 <script>
   AOS.init({
   duration: 1200,
@@ -86,5 +108,11 @@
 
   AOS.init();
 
+  document.getElementById('section3').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector('.section2').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
 
 </script>
