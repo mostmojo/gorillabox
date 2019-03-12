@@ -2,5 +2,5 @@ meta_product_name: "Gorillabox"
 meta_title: "Gorillabox - Your monthly box of healthy goodness"
 meta_description: "A monthly subscription box filled with healthy, low cost &
 organic products, hand picked by experts."
-meta_image: "gb1.png" # should exist in `app/assets/images/`
+meta_image: "meta-logo.png" # should exist in `app/assets/images/`
 twitter_account: "@gorillaboxco"   # required for Twitter Cards
