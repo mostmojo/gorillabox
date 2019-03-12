@@ -5,6 +5,13 @@
            <%= image_tag "logo.svg",  alt: "Gorilla"%>
           <% end %>
       </div>
+<div class="navigation-container">
+    <div class="nav-logo">
+        <%= link_to root_path do %>
+         <%= image_tag "logo2.png",  alt: "Gorilla"%>
+        <% end %>
+    </div>
+    <div class="nav-links">
       <% if user_signed_in? %>
         <span onclick="openNav()">
           <% if current_user.photo? %>
