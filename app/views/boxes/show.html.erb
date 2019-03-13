@@ -125,53 +125,17 @@
 </div>
 </br>
 
-<h2>All Reviews: </h2>
-
-
-    <% myReviews.each do |review|%>
-<div class="review-container">
-        <div class="review">
-          <div class="card-body">
-                <% if review.user.profile_picture != nil  %>
-                  <img class='card-img-top' src="<%= review.user.profile_picture %>" alt='Card image cap'>
-                <% else %>
-                  <img class='card-img-top' src="https://image.flaticon.com/icons/svg/17/17004.svg" alt='Card image cap'>
-                <% end %>
-                <div class="card-content">
-                  <h4 class="card-title"><strong><%= review.user.first_name %></strong></h4>
-                    <%= review.created_at.strftime("%B") %> <%= review.created_at.year %>
-                    </br>
-                    <% review.stars.times do %>
-                      <i class="fas fa-star"></i>
-                    <% end %>
-                    <% (5 - review.stars).times do %>
-                      <i class="far fa-star"></i>
-                    <% end %>
-                </div>
-              </br>
-            </div>
-
-                <p class="card-text"> <%= review.description %></p>
-          </div>
-    <% end %>
-  </br>
-
-</div>
-</div>
-
-
-
 <script>
   function myFunction(imgs) {
   // Get the expanded image
-  var expandImg = document.getElementById("expandedImg");
-  // Get the image text
-  var imgText = document.getElementById("imgtext");
-  // Use the same src in the expanded image as the image being clicked on from the grid
-  expandImg.src = imgs.src;
-  // Use the value of the alt attribute of the clickable image as text inside the expanded image
-  imgText.innerHTML = imgs.alt;
-  // Show the container element (hidden with CSS)
-  expandImg.parentElement.style.display = "block";
-}
+    var expandImg = document.getElementById("expandedImg");
+    // Get the image text
+    var imgText = document.getElementById("imgtext");
+    // Use the same src in the expanded image as the image being clicked on from the grid
+    expandImg.src = imgs.src;
+    // Use the value of the alt attribute of the clickable image as text inside the expanded image
+    imgText.innerHTML = imgs.alt;
+    // Show the container element (hidden with CSS)
+    expandImg.parentElement.style.display = "block";
+  }
 </script>
