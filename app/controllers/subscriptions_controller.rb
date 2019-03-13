@@ -62,6 +62,7 @@ class SubscriptionsController < ApplicationController
         render pdf: 'notes',
           template: 'subscriptions/notes/notes_pdf.html',
           dpi: '1000',
+          page_size: 'A4',
           :show_as_html => params[:debug].present?,
           :print_media_type => false,
           :no_background => false
@@ -69,7 +70,6 @@ class SubscriptionsController < ApplicationController
       end
     end
   end
-
 
   private
 

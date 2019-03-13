@@ -4,68 +4,74 @@
       <div class="sub-frame-flex">
       <div class="subscription-image-flex">
         <% if @user.photo.nil? %>
-        <i class="fas fa-user"></i>
+          <%= link_to "Add profile_picture", edit_user_registration_path %>
+
         <% else %>
         <img src= "<%=@user.photo %>" alt="" aria-hidden="true" class="subscription-photo">
         <% end %>
       </div>
 
       <div class="subscription-flex-title">
-        <p style="text-align: center;"><%= "👇 More about you 👇" %></p>
+
+
           <p style="font-weight: bold; font-size: 22px;"><%= @user.first_name %> <%= @user.last_name  %></p>
       </div>
 
       <div class="subscription-flex-content">
+
         <ul>
-          <li class="list-style-box"><strong>Gender: </strong><br>
-            <% if @user.gender.nil? %>
-              <%= link_to "What's your gender?", edit_user_registration_path  %>
-            <% else %>
-              <%= @user.gender %></li>
-            <% end %>
-          <li class="list-style-box"><strong>Date of Birth: </strong><br>
-            <% if @user.gender.nil? %>
-              <%= link_to "What day were you born?", edit_user_registration_path  %>
-            <% else %>
-              <%= @user.date_of_birth %></li>
-            <% end %>
-          <li class="list-style-box"><strong>First Name: </strong><br>
+          <li class="list-style-box"><strong>First Name: </strong>
             <% if @user.first_name.nil? %>
               <%= link_to "Add", edit_user_registration_path  %>
             <% else %>
               <%= @user.first_name %></li>
             <% end %>
-          <li class="list-style-box"><strong>Last Name: </strong><br>
+          <li class="list-style-box"><strong>Last Name: </strong>
             <% if @user.last_name.nil? %>
               <%= link_to "What's your last name #{@user.first_name}?", edit_user_registration_path  %>
             <% else %>
               <%= @user.last_name %></li>
             <% end %>
-
-          <li class="list-style-box"><strong>Delivery Address: </strong><br>
-            <% if @user.delivery_address.nil? %>
-              <%= link_to "Where would you like your next order to be delivered?", edit_user_registration_path  %>
+          <li class="list-style-box"><strong>Date of Birth: </strong>
+            <% if @user.date_of_birth.nil? %>
+              <%= link_to "What day were you born?", edit_user_registration_path  %>
             <% else %>
-              <%= @user.delivery_address %></li>
+              <%= @user.date_of_birth %></li>
             <% end %>
-          <li class="list-style-box"><strong>Email:</strong><br>
+          <li class="list-style-box"><strong>Gender: </strong>
+            <% if @user.gender.nil? %>
+              <%= link_to "What's your gender?", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.gender %></li>
+            <% end %>
+          <li class="list-style-box"><strong> Address: </strong>
+            <% if @user.address.nil? %>
+              <%= link_to "What is your address?", edit_user_registration_path  %>
+            <% else %>
+              <%= @user.address %></li>
+            <% end %>
+
+          <li class="list-style-box"><strong>Email:</strong>
             <% if @user.email.nil? %>
               <%= link_to "Add", edit_user_registration_path  %>
             <% else %>
               <%= @user.email %></li>
             <% end %>
-          <li class="list-style-box"><strong>Mobile: </strong><br>
+          <li class="list-style-box"><strong>Mobile: </strong>
             <% if @user.mobile_number.nil? %>
               <%= link_to "On which number can we contact you?", edit_user_registration_path  %>
             <% else %>
               <%= @user.mobile_number %></li>
             <% end %>
-          <li class="list-style-box"><strong>Goal: </strong><br>
+          <li class="list-style-box"><strong>Goal: </strong>
             <% if @user.set_goals.nil? %>
               <%= link_to "Lean muscle or lose fat?", edit_user_registration_path  %>
             <% else %>
               <%= @user.set_goals %></li>
             <% end %>
+          </br>
+          <%= link_to "Edit my details", edit_user_registration_path  %>
+
         </ul>
       </div>
     </div>
@@ -105,6 +111,7 @@
 
           <div class="icons-under-image">
 
+
         <!-- Modal to update subscription -->
 
 
@@ -132,7 +139,7 @@
 
             <%= link_to box_subscription_path(subscription.box, subscription, class: "font-icon-delete"),
                   method: :delete,
-                  data: {confirm: "We are very sad to see you go"} do %><i class="far fa-trash-alt"></i><% end %>
+                  data: {confirm: "We are very sad to see you go!"} do %><i class="far fa-trash-alt"></i><% end %>
 
 
       <!-- Modal to add a review -->

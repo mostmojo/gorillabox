@@ -32,26 +32,32 @@
         <p style="text-align: right">
           To: </br>
           <strong>Name: </strong><%= @subscription.user.first_name %></br>
-          <strong>Email:</strong><%= @subscription.user.email %></br>
+          <strong>Email: </strong><%= @subscription.user.email %></br>
           <strong>Delivery Address: </strong><%= @subscription.user.delivery_address %></br>
        </p>
        </td>
     </table>
 
 
-    <p style="text-align:center"><i>------------------Please find below your order details------------------</i></p>
+    </br>
+    </br>
 
-    <h3>Order Details:</h3>
+    <pre><p style="text-align:center; font-size: 15px;">Please find below your order details</p></pre>
+
+    </br>
+    </br>
+
+    <pre><h3>Order Details:</h3></pre>
     <div class="f-inputs">
-      <strong>Item: </strong> <%= @subscription.box.title %></p>
+      <pre style="font-size: 15px;"><strong>Item: </strong> <%= @subscription.box.title %></pre>
     </div>
 
     <div class="f-inputs">
-      <strong>Quantity: </strong> <%= @subscription.quantity %></p>
+      <pre style="font-size: 15px;"><strong>Quantity: </strong> <%= @subscription.quantity %></pre>
     </div>
 
     <div class="f-inputs">
-      <strong>Subscription Duration: </strong> <%= @subscription.duration %></p>
+      <pre style="font-size: 15px;"><strong>Subscription Duration: </strong> <%= @subscription.duration %></pre>
     </div>
 
     <div id="hidden_delivery_address", style="display: none;">
@@ -59,16 +65,16 @@
    </div>
 
     <div class="f-inputs">
-      <strong>Delivery address: </strong> <%= @subscription.delivery_address %></p>
+      <pre style="font-size: 15px;"><strong>Delivery address: </strong> <%= @subscription.delivery_address %></pre>
     </div>
 
     <div class="f-inputs">
-      <strong>Payment status: </strong> <%= @subscription.state %></p>
+      <pre style="font-size: 15px;"><strong>Payment status: </strong> <%= @subscription.state %></pre>
     </div>
 
 
     <div class="f-inputs">
-      <strong>Total: GBP <%=@subscription.amount %></strong>
+      <pre style="font-size: 15px;"><strong>Total: GBP <%=@subscription.amount %></strong></pre>
     </div>
 
     </br>
