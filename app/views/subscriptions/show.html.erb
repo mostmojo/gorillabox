@@ -7,6 +7,7 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
+
     <!-- <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6"> -->
   <div class="subscription_details">
     <h3>Subscription confirmation</h3>
@@ -50,6 +51,9 @@
         <%= link_to 'Download as PDF', export_notes_path(id: current_user.id, format: :pdf, sub_id: @subscription.id, box_id: @subscription.box.id), target: '_blank', class: "btn-purple" %>
     </div>
     </br>
+</br>
+</br>
+</br>
   </div>
 </div>
 

@@ -8,7 +8,7 @@
         <!-- Close the image -->
         <!-- Expanded image -->
         <!-- <img id="expandedImg" style="width:100%"> -->
-        <%= image_tag @box.main_image, id: "expandedImg" %>
+         <%= image_tag @box.main_image, id: "expandedImg", style: "height: 338px" %>
 
       </div>
       <!-- The grid: four columns -->
@@ -61,10 +61,12 @@
           <div class="col-md-4">
             <div class="card mb-2">
               <div class="card-body">
-                <% if review.user.profile_picture != nil  %>
+                <% if review.user.profile_picture  %>
                   <img class='card-img-top' src="<%= review.user.profile_picture %>" alt='Card image cap'>
-                <% else %>
-                  <img class='card-img-top' src="https://image.flaticon.com/icons/svg/17/17004.svg" alt='Card image cap'>
+                <% elsif review.user.photo && review.user.profile_picture.nil? == true %>
+                  <img class='card-img-top' src="<%= review.user.photo %>" alt='Card image cap'>
+                 <% else %>
+                  <img class=‘card-img-top’ src=“https://image.flaticon.com/icons/svg/17/17004.svg” alt=‘Card image cap’>
                 <% end %>
                 <div class="card-content">
                   <h4 class="card-title"><strong><%= review.user.first_name %></strong></h4>
@@ -91,10 +93,12 @@
           <div class="col-md-4">
             <div class="card mb-2">
               <div class="card-body">
-                <% if review.user.profile_picture != nil  %>
+                <% if review.user.profile_picture  %>
                   <img class='card-img-top' src="<%= review.user.profile_picture %>" alt='Card image cap'>
-                <% else %>
-                  <img class='card-img-top' src="https://image.flaticon.com/icons/svg/17/17004.svg" alt='Card image cap'>
+                <% elsif review.user.photo && review.user.profile_picture.nil? == true %>
+                  <img class='card-img-top' src="<%= review.user.photo %>" alt='Card image cap'>
+                 <% else %>
+                  <img class=‘card-img-top’ src=“https://image.flaticon.com/icons/svg/17/17004.svg” alt=‘Card image cap’>
                 <% end %>
                 <div class="card-content">
                   <h4 class="card-title"><strong><%= review.user.first_name %></strong></h4>
@@ -114,15 +118,15 @@
           <% end %>
         </div>
       </div>
-
-
   </div>
-      <div class="controls">
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"><i class="fas fa-caret-left" style="color:black; padding-right:70px;"></i></a>
+  <div class="controls">
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"><i class="fas fa-caret-left" style="color:black; padding-right:70px;"></i></a>
 
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"><i class="fas fa-caret-right" style="color:black; padding-left:50px;"></i></a>
-      </div>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"><i class="fas fa-caret-right" style="color:black; padding-left:50px;"></i></a>
+  </div>
 </div>
+
+
 </br>
 
 <script>

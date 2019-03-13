@@ -27,7 +27,8 @@
   const smooth_scroll_application = () => {
       var section1 = document.querySelector('.section1');
       if (section1) {
-        section1.addEventListener('click',function(){
+        section1.addEventListener('click',function(event){
+          // event.preventDefault();
           smoothScroll('.section2', 700);
         });
       }

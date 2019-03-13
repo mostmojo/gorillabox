@@ -5,13 +5,13 @@ const review_stars = () => {
   }
   const stars = document.querySelectorAll('.rating > input')
 
-  // if (stars) {
-  //   stars.forEach(star => {
-  //     star.addEventListener('click', event => {
-  //       reviewInput.value = event.currentTarget.value
-  //     })
-  //   })
-  // }
+  if (stars) {
+    stars.forEach(star => {
+      star.addEventListener('click', event => {
+        reviewInput.value = event.currentTarget.value
+      })
+    })
+  }
 };
 
 export { review_stars };
