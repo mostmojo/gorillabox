@@ -20,6 +20,9 @@ gem 'money-rails'
 gem 'stripe'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
