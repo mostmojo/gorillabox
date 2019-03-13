@@ -9,14 +9,12 @@ import { init_mapbox } from '../plugins/init_mapbox.js';
 // Profile tabs
 import { openCity } from '../components/tabs';
 
-// import "../plugins/flatpickr";
-// import { flatpickr_cal } from '../plugins/flatpickr_cal.js'
 
 
-// flatpickr_cal();
+
 init_mapbox();
 initAutocomplete();
 update_total_amount();
 smooth_scroll_application();
 review_stars();
-// reviews_sliding();
+reviews_sliding();

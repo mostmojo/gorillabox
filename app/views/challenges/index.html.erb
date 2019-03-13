@@ -1,116 +1,129 @@
+<div class="challenges-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
+  <div class="container">
+    <h1>Find your inner'rilla</h1>
+    <a class="btn-purple" href="#">Claim Reward</a>
+  </div>
+</div>
 
-<!--     <h1 style="text-align: center;">Challenges</h1>
-
-
-    	  <section class="task-list current">
-    	    <ul>
-    	      <li> -->
-              <!-- First Check -->
-<!--     	        <div class="checkbox">
-    	          <div class="check">
-    	            <input type="checkbox" name="task_00">
-    	            <div class="check-container">
-    	              <div class="check-off"></div>
-    	              <div class="check-on"><i></i></div> -->
-
-<!--     	            </div>
-    	          </div>
-    	          <div class="label">
-    	            <mark><strong>Pushups</strong> 👉 30 x 4</mark>
-    	        </div>
-    	      </li>
-    	      <li>
-    	        <div class="checkbox">
-    	          <div class="check">
-    	            <input type="checkbox" name="task_00">
-    	            <div class="check-container">
-    	              <div class="check-off"></div>
-    	              <div class="check-on"><i></i></div>
-
-    	            </div>
-    	          </div>
-    	          <div class="label">
-                    <mark><strong>Situps</strong> 👉 20 x 4</mark>
+<div class="container">
+  <div class="challenges-float">
+    <div class="card-flex-inline" style="display: flex; justify-content: space-around;">
+       <div class="hexagons">
+          <div class="hexagon-holder flip-container">
+            <div class="flipper">
+              <div class="front">
+                <div class="hexagon">
+                  <i class="fas fa-running"></i>
+                  <h2>Push ups</h2>
+                  <div class="hexTop"></div>
+                  <div class="hexBottom" style=""></div>
                 </div>
-    	          </div>
-    	        </div>
-    	      </li>
-    	      <li>
-    	        <div class="checkbox">
-    	          <div class="check">
-    	            <input type="checkbox" name="task_01">
-    	            <div class="check-container">
-    	              <div class="check-off"></div>
-    	              <div class="check-on"><i></i></div> -->
+              </div>
+              <div class="back">
+                <div class="hexagon-overlay">
+                  <div class="hexTop"></div>
+                  <div class="hexBottom"></div>
+                </div>
+                <div class="hexText">
+                  <p> 20 x 4 pushups. You should be targeting your triceps! 💪</p></div>
+                <div class="hexagon" style="transform:scaleX(-1);">
+                  <div class="hexTop"></div>
+                  <div class="hexBottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!--     	            </div>
-    	          </div>
-    	          <div class="label">
-                    <mark><strong>Burpees</strong> 👉 10 x 4</mark>
-    	          </div>
-    	        </div>
-    	      </li>
-    	      <li>
-    	        <div class="checkbox">
-    	          <div class="check">
-    	            <input type="checkbox" name="task_02">
-    	            <div class="check-container">
-    	              <div class="check-off"></div>
-    	              <div class="check-on"><i></i></div> -->
-
-<!--     	            </div>
-    	          </div>
-    	          <div class="label">
-    	            <mark><strong>Jumping Jacks</strong> 👉 20 x 4</mark>
-    	          </div>
-    	        </div>
-    	      </li>
-    	    </ul>
-    	  </section> -->
-
-<br>
-<br>
-<div class="challenges-container">
-  <div class="challenge-wrapper">
-    <div class="challenge-header">
-      <h2>My Completed Challenges</h2>
+       <div class="hexagons">
+          <div class="hexagon-holder flip-container" style="margin-left: 68px">
+            <div class="flipper">
+              <div class="front">
+                <div class="hexagon">
+                  <i class="fas fa-dumbbell"></i>
+                  <h2>Pull ups</h2>
+                  <div class="hexTop"></div>
+                  <div class="hexBottom" style=""></div>
+                </div>
+              </div>
+              <div class="back">
+                <div class="hexagon-overlay">
+                  <div class="hexTop"></div>
+                  <div class="hexBottom"></div>
+                </div>
+                <div class="hexText">
+                  <p> 20 x 4 pullups. You should be targeting your back! 💪</p></div>
+                <div class="hexagon" style="transform:scaleX(-1);">
+                  <div class="hexTop"></div>
+                  <div class="hexBottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       <div class="hexagons">
+          <div class="hexagon-holder flip-container" style="margin-left: 129px">
+            <div class="flipper">
+              <div class="front">
+                <div class="hexagon">
+                  <i class="fas fa-hiking"></i>
+                  <h2>Walk</h2>
+                  <div class="hexTop"></div>
+                  <div class="hexBottom" style=""></div>
+                </div>
+              </div>
+              <div class="back">
+                <div class="hexagon-overlay">
+                  <div class="hexTop"></div>
+                  <div class="hexBottom"></div>
+                </div>
+                <div class="hexText">
+                  <p>Try a 2KM walk and inhale and exhale deeply.</p></div>
+                <div class="hexagon" style="transform:scaleX(-1);">
+                  <div class="hexTop"></div>
+                  <div class="hexBottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-      <% @completed_challenges.each do |challenge| %>
-      <div class="challenge-info">
-        <p><%= challenge.title %></p>
-        <i class="far fa-check-square"></i>
-      </div>
-      <% end %>
-  </div>
-  <div class="challenge-wrapper">
-    <div class="challenge-header">
-      <h2>My outstanding Challenges</h2>
-     </div>
-    <% @incomplete_challenges.each do |challenge| %>
-      <div class="challenge-info">
-        <p><%= challenge.title %></p>
-        <p><%= challenge.details %></p>
-        <div class="check-link">
-          <%= link_to complete_challenge_path(challenge), method: :post do %>
-            <i class="far fa-square"></i>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
 </div>
 
-<div class="booking-button-position-center">
-  <%= link_to "connect with app", "https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=22DKBD&redirect_uri=https%3A%2F%2Fwww.gorillabox.co&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800" %>
-</div>
-    	  </section>
 
-        <div>
-              <div
-              id="map"
-              style="width: 100%;
-              height: 600px;"
-              data-markers="<%= @markers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-            ></div>
+
+
+  <div class="card-flex-2" style="display: flex; justify-content: space-around; padding: 24px; margin:12px;">
+      <div id="f1_container">
+        <div class="card-flex-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-1.2.1&auto=format&fit=crop&w=1980&q=80); margin: 16px;">
+          <div class="card-content-text">
+            <p class="card-text-1" style="color:white;"><i class="fab fa-youtube" style="color:white;"></i> 10min, 174kcal </p>
+            <p class="card-text-1" style="text-align: center; color:white;">Warm up stretch</p>
+          </div>
         </div>
+      </div>
+
+
+        <div id="f1_container">
+           <div class="card-flex-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1541625810516-44f1ce894bcd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60); margin: 16px;">
+            <div class="card-content-text">
+              <p class="card-text-1" style="color:white;"><i class="fab fa-youtube" style="color:white;"></i> 9min, 144kcal </p>
+              <p class="card-text-1" style="text-align: center; color:white;">Cycle session</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="f1_container">
+          <div class="card-flex-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1518644961665-ed172691aaa1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); margin: 16px;">
+            <div class="card-content-text">
+              <p class="card-text-1" style="color:white;"><i class="fab fa-youtube"></i> 6min, 74kcal </p>
+              <p class="card-text-1" style="text-align: center; color:white;">Cool down</p>
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
