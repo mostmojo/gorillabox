@@ -11,6 +11,7 @@
                   <div class="hexTop"></div>
                   <div class="hexBottom"></div>
                 </div>
+
               </div>
               <div class="back">
                 <div class="hexagon-overlay">
@@ -77,6 +78,38 @@
             </div>
           </div>
         </div>
+
+    	          </div>
+    	        </div>
+    	      </li>
+    	      <li>
+    	        <div class="checkbox">
+    	          <div class="check">
+    	            <input type="checkbox" name="task_01">
+    	            <div class="check-container">
+    	              <div class="check-off"></div>
+    	              <div class="check-on"><i></i></div> -->
+
+<div class="challenges-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
+  <div class="container">
+    <h1>Find your inner'rilla</h1>
+    <a class="btn-purple" href="#">Claim Reward</a>
+  </div>
+</div>
+
+<br>
+<br>
+<div class="challenges-container">
+  <div class="challenge-wrapper">
+    <div class="challenge-header">
+      <h2>My Completed Challenges</h2>
+    </div>
+      <% @completed_challenges.each do |challenge| %>
+      <div class="challenge-info">
+        <p><%= challenge.title %></p>
+        <i class="far fa-check-square"></i>
+      </div>
+      <% end %>
   </div>
 
   <div class="card-flex-2" style="display: flex; justify-content: space-around; padding: 24px; margin:12px;">
@@ -114,6 +147,7 @@
   </div>
 </div>
 <style>
+
 
 *{
   box-sizing:border-box;
@@ -484,9 +518,5 @@
   width: 350px;
   height: 180px;
 }
-
-
-
-
 
 </style>

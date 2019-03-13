@@ -206,4 +206,3 @@ puts 'Chanllenges Created!!'
 puts '->'
 puts '->'
 puts '-> SEED FILE CREATED'
-

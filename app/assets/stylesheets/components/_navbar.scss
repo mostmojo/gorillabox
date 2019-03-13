@@ -2,15 +2,16 @@
   justify-content: space-between;
   background-color: transparent;
   border: none;
-  margin: 25px;
+  margin: 20px;
   z-index: 100;
   transition: background-color 1s ease 0s;
-  height: 70px;
+  height: 40px;
   display: flex;
 }
 
 .nav-logo {
   width: 80px;
+  height: 40px;
   img {
     height: 40px;
   }
@@ -22,6 +23,7 @@
   // align-items: center;
   font-weight: 700;
   color: #aebf83;
+  height: 40px;
 }
 
 .nav-link {
@@ -36,6 +38,7 @@
 // Test underline effect
 
  .nav-links > a {
+  height: 40px;
   position: relative;
   color: #aebf83;
   text-decoration: none;
@@ -67,7 +70,6 @@
 }
 
 .avatar {
-
   width: 40px;
   height: 40px;
 }
