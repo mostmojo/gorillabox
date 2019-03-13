@@ -33,6 +33,9 @@
           </div>
 
           <div class="underline-item">
+            <%= link_to "My Challenges", challenges_path, class: "dropdown-item" %>
+          </div>
+          <div class="underline-item">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </div>
