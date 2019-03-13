@@ -125,38 +125,38 @@
 </div>
 </br>
 
-<!-- <h2>All Reviews: </h2>
+<h2>All Reviews: </h2>
 
 
-    <%# myReviews.each do |review|%>
+    <% myReviews.each do |review|%>
 <div class="review-container">
         <div class="review">
           <div class="card-body">
-                <%# if review.user.profile_picture != nil  %>
-                  <img class='card-img-top' src="<%#= review.user.profile_picture %>" alt='Card image cap'>
-                <%# else %>
+                <% if review.user.profile_picture != nil  %>
+                  <img class='card-img-top' src="<%= review.user.profile_picture %>" alt='Card image cap'>
+                <% else %>
                   <img class='card-img-top' src="https://image.flaticon.com/icons/svg/17/17004.svg" alt='Card image cap'>
-                <%# end %>
+                <% end %>
                 <div class="card-content">
-                  <h4 class="card-title"><strong><%#= review.user.first_name %></strong></h4>
-                    <%#= review.created_at.strftime("%B") %> <%#= review.created_at.year %>
+                  <h4 class="card-title"><strong><%= review.user.first_name %></strong></h4>
+                    <%= review.created_at.strftime("%B") %> <%= review.created_at.year %>
                     </br>
-                    <%# review.stars.times do %>
+                    <% review.stars.times do %>
                       <i class="fas fa-star"></i>
-                    <# end %>
-                    <%# (5 - review.stars).times do %>
+                    <% end %>
+                    <% (5 - review.stars).times do %>
                       <i class="far fa-star"></i>
-                    <%# end %>
+                    <% end %>
                 </div>
               </br>
             </div>
 
-                <p class="card-text"> <%#= review.description %></p>
+                <p class="card-text"> <%= review.description %></p>
           </div>
-    <%# end %>
+    <% end %>
   </br>
 
-</div> -->
+</div>
 </div>
 
 
