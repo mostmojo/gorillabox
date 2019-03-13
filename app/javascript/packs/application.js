@@ -14,7 +14,6 @@ import { openCity } from '../components/tabs';
 // import { flatpickr_cal } from '../plugins/flatpickr_cal.js'
 
 
-// flatpickr_cal();
 init_mapbox();
 initAutocomplete();
 update_total_amount();
