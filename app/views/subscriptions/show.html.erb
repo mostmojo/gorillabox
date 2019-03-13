@@ -46,7 +46,7 @@
     <p> We hope to see you very soon on Gorilla!</p>
     <div>
         <%= link_to root_path do %>
-        <p> Home</p>
+        <p style="color:#AA96DA"> Home</p>
         <% end %>
   <%= link_to 'Download as PDF', export_notes_path(id: current_user.id, format: :pdf, sub_id: @subscription.id, box_id: @subscription.box.id), target: '_blank' %>
     </div>
