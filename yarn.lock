@@ -2297,9 +2297,9 @@ escope@^3.6.0:
     estraverse "^4.1.1"
 
 esm@^3.0.84:
-  version "3.2.11"
-  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.11.tgz#f6ac0c7fbb682324e80f48950130f5a5fe953f35"
-  integrity sha512-OhgzK4tmov6Ih2gQ28k8e5kV07sGgEKG+ys3PqbDd2FBXpsZkGpFotFbrm0+KmuD2ktaV4hdPYQTDMpq9FjeTA==
+  version "3.2.16"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.16.tgz#e48f887c29a4a981a4da0baa2ae2bf20e30b5614"
+  integrity sha512-iACZMQvYFc66Y7QC+vD3oGA/fFsPA/IQwewRJ3K0gbMV52E59pdko02kF2TfVdtp5aHO62PHxL6fxtHJmhm3NQ==
 
 esprima@^2.6.0:
   version "2.7.3"
@@ -3109,7 +3109,7 @@ icss-utils@^2.1.0:
   dependencies:
     postcss "^6.0.1"
 
-ieee754@^1.1.4, ieee754@^1.1.6:
+ieee754@^1.1.12, ieee754@^1.1.4:
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.12.tgz#50bf24e5b9c8bb98af4964c941cdb0918da7b60b"
   integrity sha512-GguP+DRY+pJ3soyIiGPTvdiVXjZ+DbXOxGpXn3eMvNW4x4irjqXm4wHKscC+TfxSJ0yw/S1F24tqdMNsMZTiLA==
@@ -4708,12 +4708,12 @@ path-type@^2.0.0:
     pify "^2.0.0"
 
 pbf@^3.0.5:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/pbf/-/pbf-3.1.0.tgz#f70004badcb281761eabb1e76c92f179f08189e9"
-  integrity sha512-/hYJmIsTmh7fMkHAWWXJ5b8IKLWdjdlAFb3IHkRBn1XUhIYBChVGfVwmHEAV3UfXTxsP/AKfYTXTS/dCPxJd5w==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/pbf/-/pbf-3.2.0.tgz#e76f9f5114e395c25077ad6fe463b3507d6877fc"
+  integrity sha512-98Eh7rsJNJF/Im6XYMLaOW3cLnNyedlOd6hu3iWMD5I7FZGgpw8yN3vQBrmLbLodu7G784Irb9Qsv2yFrxSAGw==
   dependencies:
-    ieee754 "^1.1.6"
-    resolve-protobuf-schema "^2.0.0"
+    ieee754 "^1.1.12"
+    resolve-protobuf-schema "^2.1.0"
 
 pbkdf2@^3.0.3:
   version "3.0.17"
@@ -5849,7 +5849,7 @@ resolve-from@^3.0.0:
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
   integrity sha1-six699nWiBvItuZTM17rywoYh0g=
 
-resolve-protobuf-schema@^2.0.0:
+resolve-protobuf-schema@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/resolve-protobuf-schema/-/resolve-protobuf-schema-2.1.0.tgz#9ca9a9e69cf192bbdaf1006ec1973948aa4a3758"
   integrity sha512-kI5ffTiZWmJaS/huM8wZfEMer1eRd7oJQhDuxeCLe3t7N7mX3z94CN0xPxBQxFYQTSNz9T0i+v6inKqSdK8xrQ==
