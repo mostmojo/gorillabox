@@ -60,13 +60,14 @@ class SubscriptionsController < ApplicationController
       format.html
       format.pdf do
         render pdf: 'notes',
-                template: 'subscriptions/notes/notes_pdf.html',
-                dpi: '1000',
-                :show_as_html                   => params[:debug].present?,
-                :print_media_type => false, :no_background => false
-          return
-        end
+          template: 'subscriptions/notes/notes_pdf.html',
+          dpi: '1000',
+          :show_as_html => params[:debug].present?,
+          :print_media_type => false,
+          :no_background => false
+        return
       end
+    end
   end
 
 
