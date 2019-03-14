@@ -143,14 +143,18 @@
   margin-top: 29px;
 }
 
+.challenges-float {
+  margin-top: 32px;
+}
 .hexText{
   position: absolute;
   left:0;
   top:0;
+  padding: 41px;
   z-index: 3;
   color: #000;
   opacity: 1;
-  font-size: 20px;
+  font-size: 13px;
   text-align:center;
   width: 100%;
   color: #fff;
@@ -305,10 +309,14 @@
 
 .card-text-1 {
   padding: 12px;
+  font-size: 12px;
+  color: white;
+}
+.card-text-2 {
+  padding: 47px;
   font-size: 22px;
   color: white;
 }
-
 .card-flex-content {
   background-size: cover;
   background-position: center;
@@ -320,27 +328,27 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
-
-
-
-
 
  .fa-running {
       font-size: 54px;
       text-align:center;
       color: #AA96DA;
+      margin-bottom: 8px;
     }
-.fa-dumbbell {
+.fa-hand-rock {
   font-size: 54px;
   text-align:center;
   color: #AA96DA;
+  margin-bottom: 8px;
 }
 
 .fa-hiking {
   font-size: 54px;
   text-align:center;
   color: #AA96DA;
+  margin-bottom: 8px;
 }
 
 #f1_container {
