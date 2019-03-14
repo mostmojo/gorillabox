@@ -1,4 +1,5 @@
 puts 'Cleaning Database...'
+Reviews.destroy_all
 Box.destroy_all
 Challenge.destroy_all
 User.destroy_all
