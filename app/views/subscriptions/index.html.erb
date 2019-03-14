@@ -1,5 +1,5 @@
 
-<div class = "container">
+<div class = "container-dashboard">
     <div class="subscription-flex">
       <div class="sub-frame-flex">
       <div class="subscription-image-flex">
@@ -76,16 +76,11 @@
       </div>
     </div>
   </div>
-<br>
-<br>
-<br>
 
-<div class = "container"></div>
+<div class = "container">
 
   <h1 style="text-align: center;">My Subscriptions</h1>
-<br>
-<br>
-<table class="table">
+  <table class="table">
     <thead>
       <tr class="text-bold">
         <th scope="col" class="align-middle">Product</th>
@@ -96,25 +91,16 @@
         <th scope="col">Total</th>
       </tr>
     </thead>
-
-
-        <% @subscriptions.each do |subscription| %>
-        <% if subscription.user_id = current_user.id %>
-
-    <tbody>
+  <% @subscriptions.each do |subscription| %>
+    <% if subscription.user_id = current_user.id %>
+        <tbody>
       <th scope="row-1" style="width: 60px;">
         <div class="subscription-row" style="margin: 0;">
           <div class="image-subscription">
             <img src='<%= subscription.box.main_image %>' style="width: 160px; height: 100px;" >
           </div>
-
-
           <div class="icons-under-image">
-
-
         <!-- Modal to update subscription -->
-
-
             <a href="#" data-toggle="modal" data-target="#editModalCenter">
                 <i class="fa fa-pen" data-toggle='modal' aria-hidden="true"></i></a>
             <div class="modal fade" id="editModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -134,7 +120,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+            </div>
 
 
             <%= link_to box_subscription_path(subscription.box, subscription, class: "font-icon-delete"),
@@ -196,49 +182,6 @@
 
 
 </div>
-
-<style>
-  .subscription-flex {
-    display: block;
-    justify-content: center;
-    text-align: center;
-    margin-top: 4px;
-    /*border: 1px solid black;*/
-    border-style: hidden;
-    box-shadow: 2px 2px 2px 2px rgba(68,68,68, 0.1);
-    border-radius: 4px;
-  }
-
-  .subscription-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
+</div>
 
 
-  }
-  .list-style-box {
-    list-style: none;
-    margin-top: 1px;
-    width: 320px;
-    padding: 2px;
-  }
-
-.subscription-flex-title {
-  margin-top: 12px;
-}
-.subscription-flex-content {
-  display: flex;
-  justify-content: center;
-  margin-right:34px;
-
-}
-a {
-  color:#969696;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #AA96DA;
-}
-</style>
