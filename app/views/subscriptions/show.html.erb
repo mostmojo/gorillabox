@@ -11,7 +11,9 @@
     <!-- <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6"> -->
   <div class="subscription_details">
     <h3>Subscription confirmation</h3>
-    <p>Congrats, your box is on its way! 😊</p>
+    <%= link_to challenges_path do %>
+    <p>Congrats, your box is on its way!😊</p>
+    <% end %>
 
     <h3>Details:</h3>
     <div class="f-inputs">
@@ -43,13 +45,16 @@
      <strong><p class="box-name" style="color: #AA96DA; width: 300px">Total: <%= humanized_money_with_symbol(@subscription.amount) %></p></strong>
     </div>
 
-    <p> We hope to see you very soon on Gorilla!</p>
-    <div>
-        <%= link_to root_path do %>
-        <p style="color:#AA96DA"> Home</p>
-        <% end %>
-        <%= link_to 'Download as PDF', export_notes_path(id: current_user.id, format: :pdf, sub_id: @subscription.id, box_id: @subscription.box.id), target: '_blank', class: "btn-purple" %>
+    <div class="double-buttons">
+          <div style="margin-right:4px;">
+              <%= link_to 'Download PDF', export_notes_path(id: current_user.id, format: :pdf, sub_id: @subscription.id, box_id: @subscription.box.id), target: '_blank', class: "btn-purple" %>
+          </div>
+          <div>
+            <%= link_to 'See challenges', challenges_path, class: "btn-green"%>
+          </div>
     </div>
+
+
     </br>
 </br>
 </br>
@@ -66,5 +71,10 @@
 
   a:hover {
 text-decoration: none;
+}
+
+.double-buttons {
+  display:flex;
+  justify-content:space-between;
 }
 </style>
