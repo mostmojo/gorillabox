@@ -24,10 +24,9 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'wkhtmltopdf'
 
-
 group :development do
   gem 'web-console', '>= 3.3.0'
-  # gem "letter_opener", :require => false
+  gem "letter_opener", :require => false
 end
 
 group :development, :test do
