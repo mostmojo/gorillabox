@@ -4,21 +4,28 @@
 }
 
 .landing-page-banner {
-	height: calc(90vh);
+	@media (min-width: 768px){
+		height: calc(90vh);
+	} 
+	
 }
 
 .landing-page-how {
-	height: calc(86vh);
+	@media (min-width: 768px){
+		height: calc(86vh);
+	}
 }
 
 .landing-page-middle {
-    height: calc(100vh);
+    @media (min-width: 768px){
+		height: calc(100vh);
+	}
 }
-
 .landing-page-footer {
-    height: calc(86vh);
+    @media (min-width: 768px){
+		height: calc(86vh);
+	}
 }
-
 
 .container-dashboard {
   margin: 50px 30px;

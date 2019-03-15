@@ -93,6 +93,31 @@
 
 
 
+  <!-- <div class="container">
+    <div class="challenges-card" style="display:flex; justify-content: space-around !important;">
+      <div id="f1-container" >
+          <div id="f1-card" class="shadow">
+              <div class="front-face">
+                  <img src="https://images.unsplash.com/photo-1518644961665-ed172691aaa1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" style="width: 450px; height:281px;">
+              </div>
+                <div class="back face center">
+                  <p>This is nice for exposing more information about an image.</p>
+                  <p>Any content can go here.</p>
+                </div>
+            </div>
+          </div>
+
+          <div class="challenges-content" style="width:400px; height: 180px; padding: 12px; margin-top: 48px;">
+              <h3>Tips</h3>
+              <p style="margin-top: 12px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum facilis quisquam obcaecati, culpa quasi voluptatem consequatur repudiandae provident cum id blanditiis odio, vitae eius hic!</p>
+          </div>
+
+        </div>
+    </div>
+  </div>
+ -->
+
+
 
   <div class="card-flex-2" style="display: flex; justify-content: space-around; padding: 24px; margin:12px;">
       <div id="f1_container">
@@ -119,12 +144,57 @@
             <div class="card-content-text">
               <p class="card-text-1" style="color:white;"><i class="fab fa-youtube"></i> 6min, 74kcal </p>
               <p class="card-text-2" style="text-align: center; color:white;">Cool down</p>
-          </div>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
   </div>
-</div>
+
+
+<style>
+  #f1-container {
+  position: relative;
+  margin: 10px auto;
+  width: 450px;
+  height: 281px;
+  z-index: 1;
+}
+#f1-container {
+  perspective: 1000;
+}
+#f1-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+}
+#f1-container:hover #f1-card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  /*position: absolute;*/
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  /*padding: 10px;*/
+  color: white;
+  text-align: center;
+  background-color: white;
+  width: 450px;
+  height: 281px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.challenges-card {
+  margin-bottom: 38px
+}
+</style>

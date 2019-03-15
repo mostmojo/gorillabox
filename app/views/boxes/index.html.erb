@@ -1,10 +1,63 @@
+<style>
+    @media (max-width: 991px){
+      h1 br {
+        display: none;
+      }
+    }
+    @media (max-width: 771px){
+      video {
+        width: 100%;
+        height: auto;
+      }
+
+      .landing-page-middle,
+      .landing-page-footer,
+      .landing-page-how,
+      .landing-page-banner {
+        height: auto;
+        padding-top;: 50px;
+        padding-bottom: 50px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .card-trip {
+        margin-bottom: 30px;
+
+      }
+
+      .footer {
+        display: block;
+        text-align: center;
+      }
+
+      .card-trip p {
+        width: 284px;
+      }
+
+      .footer-links {
+        display: block;
+        padding-top: 10px;
+      }
+      .media {
+        font-size: 13.5px;
+        width: 382px;
+      }
+    }
+    .t-align {
+      text-align:center;
+    }
+</style>
+
 <div class="landing-page-banner pt-5">
   <div class="pt-5 container">
-      <div class="row">
+      <div class="row align-items-center">
 
           <div class="col-md-6 col-lg-6">
             <h1 style="font-weight: bold">Your monthly box of <br><span style="color: #AA96DA">healthy</span> goodness.</h1>
-            <p>A monthly subscription box filled with healthy, low cost &<br> organic products, hand picked by experts.</p>
+            <p class="media">A monthly subscription box filled with healthy, low cost &<br> organic products, hand picked by experts.</p>
 
             <div>
                 <a class="btn btn-green section1" href="#">Order a box</a>
@@ -19,7 +72,7 @@
     </div>
 </div>
 
-<div class="landing-page-how">
+<div c.landing-page-footerlass="landing-page-how">
     <div class="container pb-5">
       <div class="row">
           <h2 class="text-center col-12">How it works</h2>
@@ -33,19 +86,19 @@
           <div class="col-md-4" data-aos="zoom-in">
               <%= image_tag("b14.png", :alt => "pick-box", class:"img-fluid mx-auto d-block") %>
               <h3 class="color-purple text-center">Pick</h3>
-              <p>Find your favourite box from our three 'rilla' categories</p>
+              <p class="t-align">Find your favourite box from our three 'rilla' categories</p>
           </div>
 
           <div class="col-md-4" data-aos="zoom-in">
                 <%= image_tag("b12.png", :alt => "create-account", class:"img-fluid mx-auto d-block") %>
                 <h3 class="color-purple text-center">Create</h3>
-                <p>Sign up with gorillabox and pick the subscription you like</p>
+                <p class="t-align">Sign up with gorillabox and pick the subscription you like</p>
           </div>
 
           <div class="col-md-4" data-aos="zoom-in">
                 <%= image_tag("b13.png", :alt => "start-challenge", class:"img-fluid mx-auto d-block") %>
                 <h3 class="color-purple text-center">Start</h3>
-                <p>Do your challenges, earn rewards, let us deliver</p>
+                <p class="t-align">Do your challenges, earn rewards, let us deliver</p>
           </div>
 
         </div>
