@@ -62,7 +62,7 @@ GEM
       aws_cf_signer
       rest-client
     coderay (1.1.2)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.10)
     connection_pool (2.2.2)
     crass (1.0.6)
     devise (4.7.1)
@@ -85,11 +85,11 @@ GEM
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
     geocoder (1.6.1)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.7.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -117,7 +117,7 @@ GEM
       rake
     mini_mime (1.0.1)
     mini_portile2 (2.6.1)
-    minitest (5.13.0)
+    minitest (5.15.0)
     monetize (1.9.1)
       money (~> 6.12)
     money (6.13.2)
